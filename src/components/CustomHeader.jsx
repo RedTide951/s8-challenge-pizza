@@ -1,13 +1,19 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import logo from "../../Assets/Iteration-1-assets/logo.svg";
 
 function CustomHeader() {
+  const location = useLocation();
+  const isIntroPage = location.pathname === "/";
+
   return (
-    <div className="app-bar">
-      <div className="logo-container">
-        <img src={"../../Assets/Iteration-1-assets/logo.svg"} alt="Logo" />
+    <div className={`app-bar ${isIntroPage ? "intro-page" : ""}`}>
+      <div>
+        <img className="logo" src={logo} alt="Logo" />
       </div>
-      <Navbar />
+      {/* Conditionally render Navbar */}
+      {!isIntroPage && <Navbar />}
     </div>
   );
 }

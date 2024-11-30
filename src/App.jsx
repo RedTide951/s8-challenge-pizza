@@ -1,17 +1,19 @@
-import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Switch, Route } from "react-router-dom/";
 import SiparisFormu from "./components/SiparisFormu.jsx";
 import CustomHeader from "./components/CustomHeader.jsx";
+import IntroPage from "./components/IntroPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
+    <div>
+      <IntroPage />
       <CustomHeader />
-      <SiparisFormu />
-    </>
+      <Switch>
+        <Route path="/siparis-formu" component={SiparisFormu} />
+      </Switch>
+    </div>
   );
 }
 
