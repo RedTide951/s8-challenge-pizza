@@ -2,6 +2,15 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 let theme = createTheme({
+  palette: {
+    type: "light",
+    primary: {
+      main: "#CE2829",
+    },
+    secondary: {
+      main: "#fdc913",
+    },
+  },
   breakpoints: {
     values: {
       xs: 0, // Extra-small devices (phones)
@@ -14,19 +23,14 @@ let theme = createTheme({
   typography: {
     h1: {
       fontSize: "5rem",
+      "@media (min-width:0px)": { fontSize: "2rem" },
       "@media (min-width:600px)": { fontSize: "3rem" }, // sm
       "@media (min-width:960px)": { fontSize: "4rem" }, // md
     },
-    h2: {
-      fontSize: "1.75rem",
-      "@media (min-width:600px)": { fontSize: "2.5rem" }, // sm
-      "@media (min-width:960px)": { fontSize: "3rem" }, // md
-      "@media (min-width:1280px)": { fontSize: "3.5rem" }, // lg
-    },
-    body1: {
-      fontSize: "1rem",
-      "@media (min-width:600px)": { fontSize: "1.125rem" }, // sm
-      "@media (min-width:960px)": { fontSize: "1.25rem" }, // md
+  },
+  components: {
+    MuiButtonBase: {
+      disableRipple: true,
     },
   },
 });

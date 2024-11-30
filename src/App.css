@@ -19,3 +19,9 @@
     height: 3rem; /* Smaller height for small screens */
   }
 }
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -9,7 +9,7 @@ function CustomHeader() {
 
   return (
     <div className={`app-bar ${isIntroPage ? "intro-page" : ""}`}>
-      <div>
+      <div className="logo-container">
         <img className="logo" src={logo} alt="Logo" />
       </div>
       {/* Conditionally render Navbar */}

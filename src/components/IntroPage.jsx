@@ -1,6 +1,6 @@
 import React from "react";
 import homeBanner from "../../Assets/Iteration-1-assets/home-banner.png";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 
 function IntroPage() {
   const bannerStyle = {
@@ -29,6 +29,14 @@ function IntroPage() {
   const headerStyle = {
     color: "white",
     zIndex: 2,
+    letterSpacing: "0em",
+  };
+
+  const buttonStyle = {
+    marginTop: "2rem",
+    borderRadius: "2rem",
+    padding: "1rem 5rem",
+    zIndex: 2,
   };
 
   return (
@@ -38,6 +46,9 @@ function IntroPage() {
         <Typography variant="h1" style={headerStyle}>
           KOD ACIKTIRIR, <br /> PİZZA DOYURUR!
         </Typography>
+        <Button variant="contained" color="secondary" style={buttonStyle}>
+          <Typography variant="h6">Acıktım</Typography>
+        </Button>
       </div>
     </div>
   );
