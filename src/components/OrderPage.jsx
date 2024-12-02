@@ -1,57 +1,13 @@
 import AppBar from "./AppBar";
-import React, { useState } from "react";
-import { FormLabel, Radio, RadioGroup, FormControlLabel, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import React from "react";
+import OrderForm from "./OrderForm";
 
 function OrderPage() {
 
-  const [formData, setFormData] = useState({
-    name: "",
-    note: "",
-    size: "",
-    crust: "",
-    quantity: 1,
-    extraIngredients: [],
-  });
-
-  const handleChange = (e) => {
-    console.log({ e })
-    const { name, value, type, checked } = e.target;
-    setFormData({ ...formData, [name]: value });
-
-    // if (type === "checkbox") {
-    //   setFormData((prevData) => ({
-    //     ...prevData,
-    //     extraIngredients: checked
-    //       ? [...prevData.extraIngredients, value]
-    //       : prevData.extraIngredients.filter((item) => item !== value),
-    //   }));
-    // } else {
-    //   setFormData({ ...formData, [name]: value });
-    // }
-  };
-
-  const incrementQuantity = () => {
-    setFormData((prevData) => ({
-      ...prevData,
-      quantity: prevData.quantity < 20 ? prevData.quantity + 1 : 20,
-    }));
-  };
-
-  const decrementQuantity = () => {
-    setFormData((prevData) => ({
-      ...prevData,
-      quantity: prevData.quantity > 1 ? prevData.quantity - 1 : 1,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("e:", e);
-    console.log("Form Data:", formData);
-  };
 
   return <>
     <AppBar />
+    <OrderForm />
     {/* <div className="description-containter">
       <h2>Position Absolute Acı Pizza</h2>
       <div className="numbers-container">
@@ -64,38 +20,7 @@ function OrderPage() {
     <form onSubmit={handleSubmit}>
       <div className="ingridients-selection-container">
         <div className="size-selection"> */}
-    <form onSubmit={handleSubmit}>
-      <button onClick={incrementQuantity} type="submit">
-        +
-      </button>
-      <FormControl>
-        <FormLabel id="size-radio-buttons-group-label">Boyut</FormLabel>
-        <RadioGroup
-          aria-labelledby="size-radio-buttons-group-label"
-          defaultValue=""
-          name="size"
-          onChange={handleChange}
-        >
-          <FormControlLabel value="small" control={<Radio />} label="Küçük" />
-          <FormControlLabel value="medium" control={<Radio />} label="Orta" />
-          <FormControlLabel value="large" control={<Radio />} label="Büyük" />
-        </RadioGroup>
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel id="crust-select-label">Hamur Seçimi</InputLabel>
-        <Select
-          labelId="crust-select-label"
-          id="crust-select-label"
-          value={formData.crust}
-          name="crust"
-          label="crust"
-          onChange={handleChange}
-        >
-          <MenuItem value="Thin">İnce</MenuItem>
-          <MenuItem value="Normal">Kalın</MenuItem>
-        </Select>
-      </FormControl>
-    </form>
+
     {/*
         </div>
         <div className="dough-selection">
