@@ -1,8 +1,7 @@
 import React from "react";
-import { Button, Navbar } from "reactstrap";
 
 function SiparisFormu() {
-  return <Navbar />;
+  return <div></div>;
 }
 
 export default SiparisFormu;

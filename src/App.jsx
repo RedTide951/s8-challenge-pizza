@@ -1,17 +1,18 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom/";
 import SiparisFormu from "./components/SiparisFormu.jsx";
-import CustomHeader from "./components/CustomHeader.jsx";
-import IntroPage from "./components/IntroPage";
+import LandingPage from "./components/LandingPage.jsx";
+import AppBar from "./components/AppBar.jsx";
 
 function App() {
   return (
     <div>
-      <IntroPage />
-      <CustomHeader />
+      {/*  <AppBar /> */}
       <Switch>
-        <Route path="/siparis-formu" component={SiparisFormu} />
+        <Route path="/" component={LandingPage} />
+      </Switch>
+      <Switch>
+        <Route path="/siparis-onayi" component={SiparisFormu} />
       </Switch>
     </div>
   );

@@ -23,9 +23,15 @@ let theme = createTheme({
   typography: {
     h1: {
       fontSize: "5rem",
-      "@media (min-width:0px)": { fontSize: "2rem" },
+      "@media (min-width:0px)": { fontSize: "2.5rem" },
       "@media (min-width:600px)": { fontSize: "3rem" }, // sm
       "@media (min-width:960px)": { fontSize: "4rem" }, // md
+    },
+    button: {
+      fontFamily: "Barlow",
+      textTransform: "none",
+      letterSpacing: "0.07em",
+      fontWeight: 400,
     },
   },
   components: {
