@@ -1,8 +1,8 @@
 import AppBar from "./AppBar";
 import React, { useState } from "react";
-import { FormLabel, Radio, RadioGroup, FormControlLabel, FormControl } from "@mui/material";
+import { FormLabel, Radio, RadioGroup, FormControlLabel, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
-function SiparisFormu() {
+function OrderPage() {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,17 +14,20 @@ function SiparisFormu() {
   });
 
   const handleChange = (e) => {
+    console.log({ e })
     const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      setFormData((prevData) => ({
-        ...prevData,
-        extraIngredients: checked
-          ? [...prevData.extraIngredients, value]
-          : prevData.extraIngredients.filter((item) => item !== value),
-      }));
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    setFormData({ ...formData, [name]: value });
+
+    // if (type === "checkbox") {
+    //   setFormData((prevData) => ({
+    //     ...prevData,
+    //     extraIngredients: checked
+    //       ? [...prevData.extraIngredients, value]
+    //       : prevData.extraIngredients.filter((item) => item !== value),
+    //   }));
+    // } else {
+    //   setFormData({ ...formData, [name]: value });
+    // }
   };
 
   const incrementQuantity = () => {
@@ -43,12 +46,13 @@ function SiparisFormu() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("e:", e);
     console.log("Form Data:", formData);
   };
 
   return <>
     <AppBar />
-    <div className="description-containter">
+    {/* <div className="description-containter">
       <h2>Position Absolute Acı Pizza</h2>
       <div className="numbers-container">
         <div className="price">Fiyat</div>
@@ -59,49 +63,40 @@ function SiparisFormu() {
     </div>
     <form onSubmit={handleSubmit}>
       <div className="ingridients-selection-container">
-        <div className="size-selection">
-          <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">Boyut</FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-            >
-              <FormControlLabel value="female" control={<Radio />} label="Female" />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel value="other" control={<Radio />} label="Other" />
-            </RadioGroup>
-          </FormControl>
-          <label>
-            <input
-              type="radio"
-              name="size"
-              value="small"
-              checked={formData.size === "small"}
-              onChange={handleChange}
-            />
-            Küçük
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="size"
-              value="medium"
-              checked={formData.size === "medium"}
-              onChange={handleChange}
-            />
-            Orta
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="size"
-              value="large"
-              checked={formData.size === "large"}
-              onChange={handleChange}
-            />
-            Büyük
-          </label>
+        <div className="size-selection"> */}
+    <form onSubmit={handleSubmit}>
+      <button onClick={incrementQuantity} type="submit">
+        +
+      </button>
+      <FormControl>
+        <FormLabel id="size-radio-buttons-group-label">Boyut</FormLabel>
+        <RadioGroup
+          aria-labelledby="size-radio-buttons-group-label"
+          defaultValue=""
+          name="size"
+          onChange={handleChange}
+        >
+          <FormControlLabel value="small" control={<Radio />} label="Küçük" />
+          <FormControlLabel value="medium" control={<Radio />} label="Orta" />
+          <FormControlLabel value="large" control={<Radio />} label="Büyük" />
+        </RadioGroup>
+      </FormControl>
+      <FormControl fullWidth>
+        <InputLabel id="crust-select-label">Hamur Seçimi</InputLabel>
+        <Select
+          labelId="crust-select-label"
+          id="crust-select-label"
+          value={formData.crust}
+          name="crust"
+          label="crust"
+          onChange={handleChange}
+        >
+          <MenuItem value="Thin">İnce</MenuItem>
+          <MenuItem value="Normal">Kalın</MenuItem>
+        </Select>
+      </FormControl>
+    </form>
+    {/*
         </div>
         <div className="dough-selection">
           <label>
@@ -189,8 +184,8 @@ function SiparisFormu() {
           <div className="order-summary-container"></div>
         </div>
       </div>
-    </form>
+    </form> */}
   </>
 }
 
-export default SiparisFormu;
+export default OrderPage;
