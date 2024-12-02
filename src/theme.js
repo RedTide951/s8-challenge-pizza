@@ -22,10 +22,20 @@ let theme = createTheme({
   },
   typography: {
     h1: {
+      fontFamily: "Barlow",
       fontSize: "5rem",
       "@media (min-width:0px)": { fontSize: "2.5rem" },
       "@media (min-width:600px)": { fontSize: "3rem" }, // sm
       "@media (min-width:960px)": { fontSize: "4rem" }, // md
+    },
+    h2: {
+      fontFamily: "Barlow",
+      fontSize: "2rem",
+      fontWeight: 600,
+      letterSpacing: 0,
+      "@media (min-width:0px)": { fontSize: "1rem" },
+      "@media (min-width:600px)": { fontSize: "1rem" }, // sm
+      "@media (min-width:960px)": { fontSize: "2rem" }, // md
     },
     button: {
       fontFamily: "Barlow",

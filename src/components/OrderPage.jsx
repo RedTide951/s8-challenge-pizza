@@ -1,14 +1,23 @@
 import AppBar from "./AppBar";
 import React from "react";
 import OrderForm from "./OrderForm";
+import { Typography } from "@mui/material";
 
 function OrderPage() {
 
 
   return <>
     <AppBar />
-    <OrderForm />
-    {/* <div className="description-containter">
+    <div className="order-page-wrapper">
+      <Typography variant="h2" className="item-name-heading">Absolute Acı Pizza</Typography>
+      <div className="numbers-container">
+        <Typography className="price">Fiyat</Typography>
+        <Typography className="point">4.9</Typography>
+        <Typography>200</Typography>
+      </div>
+      <Typography variant="p">Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir</Typography>
+      <OrderForm />
+      {/* <div className="description-containter">
       <h2>Position Absolute Acı Pizza</h2>
       <div className="numbers-container">
         <div className="price">Fiyat</div>
@@ -21,7 +30,7 @@ function OrderPage() {
       <div className="ingridients-selection-container">
         <div className="size-selection"> */}
 
-    {/*
+      {/*
         </div>
         <div className="dough-selection">
           <label>
@@ -110,6 +119,7 @@ function OrderPage() {
         </div>
       </div>
     </form> */}
+    </div>
   </>
 }
 

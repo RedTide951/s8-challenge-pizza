@@ -96,6 +96,16 @@ body {
   padding-right: 20%;
 }
 
+.order-page-wrapper {
+  margin: 2rem;
+}
+
+.numbers-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 900px) {
   .logo {
     height: 3rem;
