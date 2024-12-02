@@ -10,7 +10,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={IntroPage} />
         <Route path="/success" component={Success} />
-        <Route path="/siparis-formu" component={SiparisFormu} />
+        <Route exact path="/siparis-formu" component={SiparisFormu} />
       </Switch>
     </div>
   );

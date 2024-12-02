@@ -13,8 +13,11 @@
   --color-bej: #faf7f2;
 }
 
+body {
+  margin: 0;
+}
+
 .app-bar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -27,6 +30,7 @@
   position: relative;
   height: 4rem;
   margin: 2rem;
+  margin-bottom: 1rem;
   z-index: 5;
 }
 
