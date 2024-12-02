@@ -1,5 +1,6 @@
 import AppBar from "./AppBar";
 import React, { useState } from "react";
+import { FormLabel, Radio, RadioGroup, FormControlLabel, FormControl } from "@mui/material";
 
 function SiparisFormu() {
 
@@ -8,6 +9,7 @@ function SiparisFormu() {
     note: "",
     size: "",
     crust: "",
+    quantity: 1,
     extraIngredients: [],
   });
 
@@ -25,26 +27,51 @@ function SiparisFormu() {
     }
   };
 
+  const incrementQuantity = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      quantity: prevData.quantity < 20 ? prevData.quantity + 1 : 20,
+    }));
+  };
+
+  const decrementQuantity = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      quantity: prevData.quantity > 1 ? prevData.quantity - 1 : 1,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+    console.log("Form Data:", formData);
   };
 
   return <>
     <AppBar />
     <div className="description-containter">
-      <div>Baslık</div>
+      <h2>Position Absolute Acı Pizza</h2>
       <div className="numbers-container">
-        <div>Fiyat</div>
-        <div>Puan</div>
+        <div className="price">Fiyat</div>
+        <div className="point">4.9</div>
         <div>200</div>
       </div>
-      <div>Açıklama</div>
+      <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta den</p>
     </div>
     <form onSubmit={handleSubmit}>
       <div className="ingridients-selection-container">
         <div className="size-selection">
-          <h3>Boyut Seç:</h3>
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label">Boyut</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
+            >
+              <FormControlLabel value="female" control={<Radio />} label="Female" />
+              <FormControlLabel value="male" control={<Radio />} label="Male" />
+              <FormControlLabel value="other" control={<Radio />} label="Other" />
+            </RadioGroup>
+          </FormControl>
           <label>
             <input
               type="radio"
@@ -126,11 +153,40 @@ function SiparisFormu() {
       </div>
       <div className="purchase-container">
         <div className="note-container">
-          <div>Name</div>
-          <div>Note</div>
+          <label>
+            İsim:
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Note:
+            <textarea
+              name="note"
+              value={formData.note}
+              onChange={handleChange}
+            ></textarea>
+          </label>
         </div>
         <div className="count-and-price-container">
-          asd
+
+
+          <div>
+            <button onClick={decrementQuantity}>
+              -
+            </button>
+            <div>
+              {formData.quantity}
+            </div>
+            <button onClick={incrementQuantity} type="submit">
+              +
+            </button>
+          </div>
+
+          <div className="order-summary-container"></div>
         </div>
       </div>
     </form>
