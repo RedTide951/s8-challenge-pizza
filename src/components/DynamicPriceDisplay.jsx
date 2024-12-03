@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_PRICE = 100; // Base price of the pizza
-const INGREDIENT_PRICE = 5; // Price per ingredient
+const BASE_PRICE = 100;
+const INGREDIENT_PRICE = 5;
 
 function DynamicPriceDisplay({ quantity, ingredients, size }) {
   const [totalPrice, setTotalPrice] = useState(BASE_PRICE);

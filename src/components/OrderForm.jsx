@@ -36,6 +36,28 @@ const INGREDIENTS_LIST = [
 const OrderForm = () => {
   return (
     <div>
+      <div className="description-container">
+        <div className="item-heading-container">
+          <h2 className="item-name-heading">Position Absolute Acı Pizza</h2>
+        </div>
+        <div className="numbers-container">
+          <p className="price">85.50₺</p>
+          <p></p>
+          <p className="rating">4.9</p>
+          <p className="bilinmeyen-sayi">200</p>
+        </div>
+        <div className="item-description-text">
+          <p>
+            Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı
+            pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
+            diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
+            ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
+            yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan
+            kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta
+            denir
+          </p>
+        </div>
+      </div>
       <Formik
         initialValues={{
           crust: "thin",
@@ -163,7 +185,7 @@ const OrderForm = () => {
                 <div className="purchase-note-container">
                   <FormGroup onChange={handleChange}>
                     <h3 className="form-heading" style={{ textAlign: "left" }}>
-                      İsim
+                      İsim <span style={{ color: "#ce2829" }}> *</span>
                     </h3>
                     <TextField
                       name="username" // Add this name to associate with Formik state
