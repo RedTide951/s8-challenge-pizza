@@ -3,6 +3,8 @@
 #root {
   margin: 0 auto;
   text-align: center;
+  color: #292929;
+  font-family: barlow;
 }
 
 :root {
@@ -24,6 +26,10 @@ body {
   background-color: var(--color-kirmizi);
   color: var(--color-bej);
   z-index: 0;
+}
+
+.active-tab {
+  font-weight: bold;
 }
 
 .logo {
@@ -97,13 +103,71 @@ body {
 }
 
 .order-page-wrapper {
-  margin: 2rem;
+  margin: 2rem 20%;
+}
+
+.item-name-heading {
+  text-align: left;
+  font-family: Barlow;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 .numbers-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.price {
+  font-family: Barlow;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rating {
+  font-family: Roboto Condensed;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.bilinmeyen-sayi {
+  font-family: Roboto Condensed;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.item-description-text {
+  text-align: left;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.size-and-crust-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  margin: 1rem 0;
+}
+
+.form-heading {
+  font-weight: 600;
+  grid-column: span 3;
+}
+
+.ingredients-checkbox-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 1rem; /* Spacing between the items */
+  margin: 1rem 0;
 }
 
 @media (max-width: 900px) {
@@ -120,5 +184,8 @@ body {
 @media (max-width: 600px) {
   .logo {
     height: 2.5rem;
+  }
+  .order-page-wrapper {
+    margin: 2rem 5%;
   }
 }

@@ -5,12 +5,10 @@ import {
   Button,
   FormGroup,
   Checkbox,
-  FormLabel,
   Radio,
   RadioGroup,
   FormControlLabel,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
   Input,
@@ -71,58 +69,66 @@ const OrderForm = () => (
         touched,
       }) => (
         <>
-          <form onSubmit={handleSubmit}>
-            <FormControl>
-              <FormLabel id="size-radio-buttons-group-label">Boyut</FormLabel>
-              <RadioGroup
-                aria-labelledby="size-radio-buttons-group-label"
-                name="size"
-                onChange={handleChange}
-                value={values.size}
-              >
-                <FormControlLabel
-                  value="small"
-                  control={<Radio />}
-                  label="Küçük"
-                />
-                <FormControlLabel
-                  value="medium"
-                  control={<Radio />}
-                  label="Orta"
-                />
-                <FormControlLabel
-                  value="large"
-                  control={<Radio />}
-                  label="Büyük"
-                />
-              </RadioGroup>
-            </FormControl>
-            {/* {errors.email && touched.email && errors.email} */}
+          <form onSubmit={handleSubmit} className="form">
+            <div className="size-and-crust-container">
+              <FormControl>
+                <h3 className="form-heading">
+                  Boyut Seç <span style={{ color: "#ce2829" }}> *</span>
+                </h3>
+                <RadioGroup
+                  aria-labelledby="size-radio-buttons-group-label"
+                  name="size"
+                  onChange={handleChange}
+                  value={values.size}
+                >
+                  <FormControlLabel
+                    value="small"
+                    control={<Radio />}
+                    label="Küçük"
+                  />
+                  <FormControlLabel
+                    value="medium"
+                    control={<Radio />}
+                    label="Orta"
+                  />
+                  <FormControlLabel
+                    value="large"
+                    control={<Radio />}
+                    label="Büyük"
+                  />
+                </RadioGroup>
+              </FormControl>
+              {/* {errors.email && touched.email && errors.email} */}
 
-            <FormControl fullWidth>
-              <InputLabel id="crust-select-label">Hamur Seçimi</InputLabel>
-              <Select
-                labelId="crust-select-label"
-                name="crust"
-                onChange={handleChange}
-                value={values.crust}
-              >
-                <MenuItem value="thin">İnce</MenuItem>
-                <MenuItem value="normal">Normal</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormGroup onChange={handleChange}>
-              {INGREDIENTS_LIST.map(({ label, value }) => (
-                <FormControlLabel
-                  name="ingredients"
-                  key={value}
-                  control={<Checkbox />}
-                  label={label}
-                  value={value}
-                />
-              ))}
-            </FormGroup>
+              <FormControl sx={{ minWidth: 200 }}>
+                <h3 className="form-heading">
+                  Hamur Seç <span style={{ color: "#ce2829" }}> *</span>
+                </h3>
+                <Select
+                  labelId="crust-select-label"
+                  name="crust"
+                  onChange={handleChange}
+                  value={values.crust}
+                >
+                  <MenuItem value="thin">İnce</MenuItem>
+                  <MenuItem value="normal">Normal</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className="ingredients-checkbox-container">
+              <h3 className="form-heading">Ek Malzemeler</h3>
+              <FormGroup onChange={handleChange}>
+                {INGREDIENTS_LIST.map(({ label, value }) => (
+                  <FormControlLabel
+                    name="ingredients"
+                    key={value}
+                    control={<Checkbox />}
+                    label={label}
+                    value={value}
+                  />
+                ))}
+              </FormGroup>
+            </div>
 
             <FormGroup onChange={handleChange}>
               <ButtonGroup disableElevation variant="contained">
