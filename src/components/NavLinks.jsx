@@ -18,20 +18,23 @@ function NavLinks() {
         }}
         textColor="white"
         indicatorColor="secondary"
-        className="nav-links"
       >
         <Tab
-          label="Ana Sayfa"
+          label="Ana Sayfa -"
           value="home"
           sx={{
             fontWeight: activeTab === "home" ? "bold" : "normal",
+            padding: "1px",
+            margin: "1px",
           }}
         />
         <Tab
-          label="Seçenekler"
+          label="Seçenekler -"
           value="preferences"
           sx={{
             fontWeight: activeTab === "preferences" ? "bold" : "normal",
+            padding: "1px",
+            margin: "1px",
           }}
         />
         <Tab
@@ -39,6 +42,8 @@ function NavLinks() {
           value="order"
           sx={{
             fontWeight: activeTab === "order" ? "bold" : "normal",
+            padding: "1px",
+            margin: "1px",
           }}
         />
       </Tabs>

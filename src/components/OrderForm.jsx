@@ -11,7 +11,7 @@ import {
   FormControl,
   Select,
   MenuItem,
-  Input,
+  TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
@@ -34,7 +34,14 @@ const INGREDIENTS_LIST = [
 const OrderForm = () => (
   <div>
     <Formik
-      initialValues={{ crust: "thin", size: "small" }}
+      initialValues={{
+        crust: "thin",
+        size: "small",
+        quantity: 1,
+        ingredients: [],
+        username: "",
+        note: "",
+      }}
       validate={(values) => {
         const errors = {};
         if (!values.username) {
@@ -61,14 +68,7 @@ const OrderForm = () => (
         }, 400);
       }}
     >
-      {({
-        values,
-        handleChange,
-        handleSubmit,
-        isSubmitting,
-        errors,
-        touched,
-      }) => (
+      {({ values, handleChange, handleSubmit, errors, touched }) => (
         <>
           <form onSubmit={handleSubmit} className="form">
             <div className="size-and-crust-container">
@@ -120,6 +120,9 @@ const OrderForm = () => (
               <h3 className="form-heading" style={{ textAlign: "left" }}>
                 Ek Malzemeler
               </h3>
+              <div className="item-description-text">
+                <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+              </div>
               <Grid container spacing={3}>
                 <FormGroup onChange={handleChange}>
                   <Grid container spacing={1}>
@@ -136,6 +139,7 @@ const OrderForm = () => (
                           label={label}
                           value={value}
                           onChange={handleChange}
+                          name="ingredients"
                         />
                       </Grid>
                     ))}
@@ -144,37 +148,103 @@ const OrderForm = () => (
               </Grid>
             </div>
 
-            <FormGroup onChange={handleChange}>
-              <ButtonGroup disableElevation variant="contained">
-                <Button>One</Button>
-                <Button>Two</Button>
-              </ButtonGroup>
-            </FormGroup>
+            <div className="purchase-box">
+              <div className="purchase-note-container">
+                <FormGroup onChange={handleChange}>
+                  <h3 className="form-heading" style={{ textAlign: "left" }}>
+                    İsim
+                  </h3>
+                  <TextField
+                    name="username" // Add this name to associate with Formik state
+                    placeholder=""
+                    value={values.username || ""} // Bind to Formik state
+                    onChange={handleChange} // Formik handles the change
+                  />
+                  {errors.username && touched.username && (
+                    <div style={{ color: "red" }}>{errors.username}</div>
+                  )}
+                  <h3 className="form-heading" style={{ textAlign: "left" }}>
+                    Sipariş Notu
+                  </h3>
+                  <TextField
+                    name="note"
+                    multiline
+                    placeholder="Sipariş notunuzu buraya yazabilirsiniz."
+                    value={values.note || ""}
+                    onChange={handleChange}
+                  />
+                </FormGroup>
+              </div>
+              <hr />
+              <div className="purchase-section-container">
+                <div className="quantity-selector-container">
+                  <FormGroup onChange={handleChange}>
+                    <ButtonGroup disableElevation variant="contained">
+                      <Button
+                        className="quantity-button"
+                        color="secondary"
+                        size="large"
+                        sx={{ width: "50px", height: "50px" }}
+                        onClick={() => {
+                          values.quantity > 1 &&
+                            handleChange({
+                              target: {
+                                name: "quantity",
+                                value: values.quantity - 1,
+                              },
+                            });
+                        }}
+                      >
+                        -
+                      </Button>
+                      <div className="quantity-display">{values.quantity}</div>
+                      <Button
+                        className="quantity-button"
+                        color="secondary"
+                        sx={{ width: "50px", height: "50px" }}
+                        onClick={() => {
+                          values.quantity < 20 &&
+                            handleChange({
+                              target: {
+                                name: "quantity",
+                                value: values.quantity + 1,
+                              },
+                            });
+                        }}
+                      >
+                        +
+                      </Button>
+                    </ButtonGroup>
+                  </FormGroup>
+                </div>
+                <div className="purchase-finalize-container">
+                  <div className="prices-display-container">
+                    <h3 className="form-heading" style={{ textAlign: "left" }}>
+                      Sipariş Toplamı
+                    </h3>
+                    <div className="secimler-container">
+                      <p className="secimler-text">Seçimler</p>
+                      <p className="secimler-text">25.00</p>
+                    </div>
+                    <div className="toplam-container">
+                      <p className="toplam-text">Toplam</p>
+                      <p className="toplam-text">110.50</p>
+                    </div>
+                  </div>
 
-            <FormGroup onChange={handleChange}>
-              <h3>İsim</h3>
-              <Input
-                name="username" // Add this name to associate with Formik state
-                placeholder="Type something…"
-                value={values.username || ""} // Bind to Formik state
-                onChange={handleChange} // Formik handles the change
-              />
-              {errors.username && touched.username && (
-                <div style={{ color: "red" }}>{errors.username}</div>
-              )}
-              <h3>Sipariş Notu</h3>
-              <Input
-                name="note"
-                multiline
-                placeholder="Type something…"
-                value={values.note || ""}
-                onChange={handleChange}
-              />
-            </FormGroup>
-
-            <button type="submit" disabled={isSubmitting}>
-              Sipariş oluştur
-            </button>
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    color="secondary"
+                    size="large"
+                    sx={{ width: "100%", height: "100%" }}
+                    className="purchase-button"
+                  >
+                    Sipariş oluştur
+                  </Button>
+                </div>
+              </div>
+            </div>
           </form>
         </>
       )}

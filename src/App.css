@@ -50,9 +50,8 @@ body {
 
 .nav-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+  align-items: left;
+  margin: 0 20%;
   padding: 0;
   position: relative;
   z-index: 2;
@@ -163,7 +162,63 @@ body {
   grid-column: span 3;
 }
 
-.ingredients-grid {
+.purchase-section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.purchase-note-container {
+  margin: 1rem 0;
+}
+
+.quantity-display {
+  text-align: center;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1;
+  font-size: 1.2rem;
+}
+
+.purchase-finalize-container {
+  text-align: center;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 5px;
+}
+
+.prices-display-container {
+  min-width: 20vw;
+  margin: 2rem;
+}
+
+.secimler-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secimler-text {
+  font-family: Barlow;
+  color: #5f5f5f;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.toplam-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toplam-text {
+  font-family: Barlow;
+  color: #ce2829;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 900px) {
