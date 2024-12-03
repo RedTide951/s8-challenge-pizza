@@ -14,6 +14,7 @@ import {
   TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import axios from "axios";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "pepperoni" },
@@ -49,26 +50,35 @@ const OrderForm = () => (
         }
         return errors;
       }}
-      // validate={values => {
-      //     const errors = {};
-      //     if (!values.email) {
-      //         errors.email = 'Required';
-      //     } else if (
-      //         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-      //     ) {
-      //         errors.email = 'Invalid email address';
-      //     }
-      //     return errors;
-      // }}
-      onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
+        try {
+          // Simulate API call with Axios
+          const response = await axios.post(
+            "https://reqres.in/api/pizza",
+            values
+          );
+          // Log response
+          console.log("Sipariş Özeti:", response.data);
+          alert("Siparişiniz başarıyla alındı!");
+          resetForm(); // Reset form after successful submission
+        } catch (error) {
+          console.error("Sipariş gönderilirken bir hata oluştu:", error);
+          alert(
+            "Sipariş gönderilirken bir hata oluştu. Lütfen tekrar deneyiniz."
+          );
+        } finally {
           setSubmitting(false);
-        }, 400);
+        }
       }}
     >
-      {({ values, handleChange, handleSubmit, errors, touched }) => (
+      {({
+        values,
+        handleChange,
+        handleSubmit,
+        errors,
+        touched,
+        isSubmitting,
+      }) => (
         <>
           <form onSubmit={handleSubmit} className="form">
             <div className="size-and-crust-container">
@@ -99,7 +109,6 @@ const OrderForm = () => (
                   />
                 </RadioGroup>
               </FormControl>
-              {/* {errors.email && touched.email && errors.email} */}
 
               <FormControl sx={{ minWidth: 200 }}>
                 <h3 className="form-heading">
@@ -239,6 +248,11 @@ const OrderForm = () => (
                     size="large"
                     sx={{ width: "100%", height: "100%" }}
                     className="purchase-button"
+                    disabled={
+                      isSubmitting ||
+                      Boolean(errors.username) ||
+                      Boolean(errors.ingredients)
+                    }
                   >
                     Sipariş oluştur
                   </Button>
