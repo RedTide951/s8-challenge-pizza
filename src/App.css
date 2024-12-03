@@ -163,11 +163,7 @@ body {
   grid-column: span 3;
 }
 
-.ingredients-checkbox-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 1rem; /* Spacing between the items */
-  margin: 1rem 0;
+.ingredients-grid {
 }
 
 @media (max-width: 900px) {

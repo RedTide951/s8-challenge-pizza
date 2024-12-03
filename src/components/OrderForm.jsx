@@ -13,6 +13,7 @@ import {
   MenuItem,
   Input,
 } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "pepperoni" },
@@ -116,18 +117,31 @@ const OrderForm = () => (
               </FormControl>
             </div>
             <div className="ingredients-checkbox-container">
-              <h3 className="form-heading">Ek Malzemeler</h3>
-              <FormGroup onChange={handleChange}>
-                {INGREDIENTS_LIST.map(({ label, value }) => (
-                  <FormControlLabel
-                    name="ingredients"
-                    key={value}
-                    control={<Checkbox />}
-                    label={label}
-                    value={value}
-                  />
-                ))}
-              </FormGroup>
+              <h3 className="form-heading" style={{ textAlign: "left" }}>
+                Ek Malzemeler
+              </h3>
+              <Grid container spacing={3}>
+                <FormGroup onChange={handleChange}>
+                  <Grid container spacing={1}>
+                    {INGREDIENTS_LIST.map(({ label, value }) => (
+                      <Grid
+                        size={4}
+                        key={value}
+                        display="flex"
+                        justifyContent="left"
+                        alignItems="left"
+                      >
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label={label}
+                          value={value}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                    ))}
+                  </Grid>
+                </FormGroup>
+              </Grid>
             </div>
 
             <FormGroup onChange={handleChange}>
