@@ -240,3 +240,12 @@ body {
     margin: 2rem 5%;
   }
 }
+
+@media (max-width: 400px) {
+  .logo {
+    height: 2rem;
+  }
+  .order-page-wrapper {
+    margin: 2rem 5%;
+  }
+}

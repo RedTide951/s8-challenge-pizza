@@ -110,7 +110,7 @@ const OrderForm = () => (
                 </RadioGroup>
               </FormControl>
 
-              <FormControl sx={{ minWidth: 200 }}>
+              <FormControl sx={{ minWidth: "30%" }}>
                 <h3 className="form-heading">
                   Hamur Seç <span style={{ color: "#ce2829" }}> *</span>
                 </h3>
