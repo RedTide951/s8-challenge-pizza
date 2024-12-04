@@ -1,7 +1,7 @@
 .footer-main-container {
   background-color: var(--color-koyu-gri);
   color: var(--color-bej);
-  padding: 2rem 10%;
+  padding: 2rem 5%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -54,4 +54,21 @@
 .footer-menu-list a {
   margin: 0.5rem 0;
   text-decoration: none;
+}
+
+.copyright-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-koyu-gri);
+  color: var(--color-bej);
+  padding: 2rem 5%;
+  border-top: 1px solid var(--color-acik-gri);
+}
+
+@media (max-width: 900px) {
+  .footer-main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 10%;
+  }
 }

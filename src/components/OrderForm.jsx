@@ -34,11 +34,20 @@ const INGREDIENTS_LIST = [
   { label: "Kabak", value: "zucchini" },
 ];
 
+const yellow = [500];
+
 const OrderForm = () => {
   const history = useHistory();
 
   return (
     <div>
+      <div className="orderform-navlinks-container">
+        <div className="orderform-navlinks-wrapper">
+          <a href="">Ana Sayfa -</a>
+          <a href="">Seçenekler -</a>
+          <p href="">Sipariş Oluştur</p>
+        </div>
+      </div>
       <div className="description-container">
         <div className="item-heading-container">
           <h2 className="item-name-heading">Position Absolute Acı Pizza</h2>
@@ -172,7 +181,32 @@ const OrderForm = () => {
                           alignItems="left"
                         >
                           <FormControlLabel
-                            control={<Checkbox />}
+                            control={<Checkbox
+                              sx={{
+                                color: "gray",
+                                '&.Mui-checked': {
+                                  color: "#fdc913",
+                                },
+                                '& .MuiSvgIcon-root': { fontSize: 40 }
+
+                              }}
+                            /* icon={<span style={{
+                              borderRadius: 3,
+                              width: 40,
+                              height: 40,
+                              boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
+                              backgroundColor: '#FAF7F2',
+                              backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
+                              '.Mui-focusVisible &': {
+                                outline: '2px auto rgba(19,124,189,.6)',
+                                outlineOffset: 2,
+                              },
+                              'input:hover ~ &': {
+                                backgroundColor: '#ebf1f5',
+                              },
+                            }}
+                            />} */
+                            />}
                             label={label}
                             value={value}
                             onChange={handleChange}
