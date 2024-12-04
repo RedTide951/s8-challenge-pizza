@@ -1,6 +1,7 @@
 import AppBar from "./AppBar";
 import React from "react";
 import OrderForm from "./OrderForm";
+import Footer from "./Footer";
 
 function OrderPage() {
   return (
@@ -9,6 +10,7 @@ function OrderPage() {
       <div className="order-page-wrapper">
         <OrderForm />
       </div>
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,11 @@
   flex-direction: row;
 }
 
+.footer-heading {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
 .footer-logo {
   height: 5rem;
 }
@@ -28,6 +33,11 @@
   margin: 0.5rem;
 }
 
+.footer-menu-container {
+  text-align: left;
+  padding: 0.2rem;
+}
+
 .footer-menu-list {
   list-style-type: none;
   text-align: left;
@@ -42,6 +52,6 @@
 
 .footer-menu-list p,
 .footer-menu-list a {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   text-decoration: none;
 }
