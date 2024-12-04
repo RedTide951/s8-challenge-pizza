@@ -10,8 +10,8 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={IntroPage} />
-        <Route path="/success" component={Success} />
         <Route exact path="/siparis-formu" component={OrderPage} />
+        <Route path="/success" component={Success} />
       </Switch>
     </div>
   );
