@@ -48,6 +48,8 @@ function Success() {
           <div className="secimler">
             <p>Seçimler</p>
             <p>{}</p>
+          </div>
+          <div className="toplam">
             <p>Toplam</p>
             <p>{}</p>
           </div>

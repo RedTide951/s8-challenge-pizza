@@ -50,3 +50,11 @@
   padding: 1rem 5rem;
   text-align: left;
 }
+
+.success-order-price-details {
+  border: 1px solid var(--color-bej);
+  border-radius: 5px;
+  margin: 0 30%;
+  padding: 2rem;
+  text-align: left;
+}
