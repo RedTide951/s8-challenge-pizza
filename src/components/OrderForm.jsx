@@ -34,7 +34,6 @@ const INGREDIENTS_LIST = [
   { label: "Kabak", value: "zucchini" },
 ];
 
-const yellow = [500];
 
 const OrderForm = () => {
   const history = useHistory();

@@ -88,6 +88,10 @@ body {
   font-weight: 500;
 }
 
+.orderform-upper-div {
+  background: #5f5f5f;
+}
+
 .item-name-heading {
   text-align: left;
   font-family: Barlow;
