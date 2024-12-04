@@ -1,12 +1,47 @@
 .footer-main-container {
   background-color: var(--color-koyu-gri);
   color: var(--color-bej);
-  padding: 2rem 15%;
+  padding: 2rem 10%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
 .footer-logo {
-  height: 2rem;
+  height: 5rem;
+}
+
+.footer-info-list {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+
+.footer-info-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-info-list img,
+.footer-info-list p {
+  margin: 0.5rem;
+}
+
+.footer-menu-list {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+
+.footer-menu-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-menu-list p,
+.footer-menu-list a {
+  margin: 0.5rem;
+  text-decoration: none;
 }
