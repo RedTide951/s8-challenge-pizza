@@ -1,0 +1,12 @@
+.footer-main-container {
+  background-color: var(--color-koyu-gri);
+  color: var(--color-bej);
+  padding: 2rem 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.footer-logo {
+  height: 2rem;
+}

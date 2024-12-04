@@ -94,3 +94,45 @@
 .toplam p {
   margin: 0;
 }
+
+@media (max-width: 900px) {
+  .success-page {
+    background: var(--color-kirmizi);
+    padding: 0 5%;
+  }
+
+  .success-order-confirmed-container {
+    margin: -2rem 1rem 0 1rem;
+    padding: 1rem;
+  }
+
+  .success-confirmation-text {
+    color: var(--color-bej);
+    font-family: Roboto Condensed;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 250;
+    letter-spacing: 0rem;
+    margin: 2rem 0rem 1rem 0rem;
+  }
+
+  .success-order-details-container {
+    color: var(--color-bej);
+    text-align: center;
+    margin: 0rem 0;
+    padding: 0;
+  }
+
+  .success-order-details-display {
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .success-order-price-details {
+    border: 1px solid var(--color-bej);
+    border-radius: 5px;
+    margin: 0 1rem;
+    padding: 1rem;
+    text-align: left;
+  }
+}
