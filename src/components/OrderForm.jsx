@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import {
   ButtonGroup,
@@ -34,6 +35,8 @@ const INGREDIENTS_LIST = [
 ];
 
 const OrderForm = () => {
+  const history = useHistory();
+
   return (
     <div>
       <div className="description-container">
@@ -84,7 +87,8 @@ const OrderForm = () => {
             // Log response
             console.log("Sipariş Özeti:", response.data);
             alert("Siparişiniz başarıyla alındı!");
-            resetForm(); // Reset form after successful submission
+            history.push("/success", { orderDetails: response.data });
+            resetForm();
           } catch (error) {
             console.error("Sipariş gönderilirken bir hata oluştu:", error);
             alert(

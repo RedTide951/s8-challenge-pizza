@@ -1,3 +1,52 @@
 .success-page {
   background: var(--color-kirmizi);
+  padding: 0 10%;
+}
+
+.success-order-confirmed-container {
+  margin: 1rem 20%;
+  padding: 2rem;
+}
+
+.success-styled-text {
+  color: var(--color-sari);
+  font-family: Satisfy;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: -2rem;
+}
+
+.success-confirmation-text {
+  color: var(--color-bej);
+  font-family: Roboto Condensed;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 250;
+  letter-spacing: 0rem;
+  margin: 2rem;
+}
+
+.success-hr {
+  color: var(--color-bej);
+  opacity: 50%;
+}
+
+.success-pizza-name {
+  color: var(--color-bej);
+  font-family: Barlow;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.success-order-details-container {
+  color: var(--color-bej);
+  text-align: center;
+  margin: 0rem 20%;
+  padding: 0 2rem;
+}
+
+.success-order-details-display {
+  padding: 1rem 5rem;
+  text-align: left;
 }
