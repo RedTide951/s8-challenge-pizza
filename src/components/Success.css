@@ -58,3 +58,39 @@
   padding: 2rem;
   text-align: left;
 }
+
+.success-order-price-details-header {
+  color: var(--color-bej);
+  font-family: Barlow;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.secimler {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-bej);
+  font-family: Barlow;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.secimler p {
+  margin: 0;
+}
+
+.toplam {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-bej);
+  font-family: Barlow;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.toplam p {
+  margin: 0;
+}

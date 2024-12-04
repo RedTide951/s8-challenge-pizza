@@ -43,15 +43,15 @@ function Success() {
         </div>
       </div>
       <div className="success-order-price-details">
-        <h3 className="success-pizza-name">Sipariş Toplamı</h3>
+        <h3 className="success-order-price-details-header">Sipariş Toplamı</h3>
         <div className="success-order-price-details-display">
           <div className="secimler">
             <p>Seçimler</p>
-            <p>{}</p>
+            <p>price{}</p>
           </div>
           <div className="toplam">
             <p>Toplam</p>
-            <p>{}</p>
+            <p>price{}</p>
           </div>
         </div>
       </div>
