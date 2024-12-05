@@ -8,8 +8,6 @@ import {
   Checkbox,
   FormControlLabel,
   FormControl,
-  Select,
-  MenuItem,
   TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -18,6 +16,7 @@ import DynamicPriceDisplay from "./DynamicPriceDisplay";
 import "./OrderForm.css";
 import CustomRadioGroup from "./CustomRadioGroup";
 import StyledDropdown from "./StyledDropdown";
+import pizzaImage from "../../Assets/Iteration-2-assets/pictures/form-banner.png";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "Pepperoni" },
@@ -55,35 +54,38 @@ const OrderForm = () => {
 
   return (
     <div>
-      <div className="orderform-navlinks-container">
-        <div className="orderform-navlinks-wrapper">
-          <a href="">Ana Sayfa</a>
-          <span>-</span>
-          <a href="">Seçenekler</a>
-          <span>-</span>
-          <p href="">Sipariş Oluştur</p>
+      <div className="orderform-upper-section-wrapper">
+        <img className="orderform-item-image" src={pizzaImage} alt="" />
+        <div className="orderform-navlinks-container">
+          <div className="orderform-navlinks-wrapper">
+            <a href="">Ana Sayfa</a>
+            <span>-</span>
+            <a href="">Seçenekler</a>
+            <span>-</span>
+            <p href="">Sipariş Oluştur</p>
+          </div>
         </div>
-      </div>
-      <div className="description-container">
-        <div className="item-heading-container">
-          <h2 className="item-name-heading">Position Absolute Acı Pizza</h2>
-        </div>
-        <div className="numbers-container">
-          <p className="price">85.50₺</p>
-          <p></p>
-          <p className="rating">4.9</p>
-          <p className="bilinmeyen-sayi">200</p>
-        </div>
-        <div className="item-description-text">
-          <p>
-            Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı
-            pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli
-            diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun
-            ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
-            yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan
-            kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta
-            denir
-          </p>
+        <div className="description-container">
+          <div className="item-heading-container">
+            <h2 className="item-name-heading">Position Absolute Acı Pizza</h2>
+          </div>
+          <div className="numbers-container">
+            <p className="price">85.50₺</p>
+            <p></p>
+            <p className="rating">4.9</p>
+            <p className="bilinmeyen-sayi">200</p>
+          </div>
+          <div className="item-description-text">
+            <p>
+              Frontent Dev olarak hala position:absolute kullanıyorsan bu çok
+              acı pizza tam sana göre. Pizza, domates, peynir ve genellikle
+              çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
+              odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
+              yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan
+              İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
+              pizzetta denir
+            </p>
+          </div>
         </div>
       </div>
       <Formik

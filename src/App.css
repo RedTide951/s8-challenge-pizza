@@ -20,7 +20,7 @@ body {
 }
 
 .order-page-wrapper {
-  margin: 2rem 20%;
+  margin: 0 25% 2rem 25%;
 }
 
 .item-name-heading {
@@ -131,6 +131,9 @@ body {
     padding-left: 10%;
     padding-right: 10%;
   }
+  .order-page-wrapper {
+    margin: 0 10% 2rem 10%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -138,15 +141,12 @@ body {
     height: 2.5rem;
   }
   .order-page-wrapper {
-    margin: 2rem 5%;
+    margin: 0 5% 2rem 5%;
   }
 }
 
 @media (max-width: 400px) {
   .logo {
     height: 2rem;
-  }
-  .order-page-wrapper {
-    margin: 2rem 5%;
   }
 }

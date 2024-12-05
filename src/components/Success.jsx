@@ -25,7 +25,7 @@ function Success() {
   if (orderDetails.crust === "thin") {
     crust = "İnce";
   } else {
-    crust = "Kalın";
+    crust = "Normal";
   }
 
   return (
