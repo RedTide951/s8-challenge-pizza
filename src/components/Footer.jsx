@@ -11,13 +11,16 @@ import li3 from "../../Assets/Iteration-2-assets/footer/insta/li-3.png";
 import li4 from "../../Assets/Iteration-2-assets/footer/insta/li-4.png";
 import li5 from "../../Assets/Iteration-2-assets/footer/insta/li-5.png";
 import { ImageList, ImageListItem } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <>
       <div className="footer-main-container">
         <div className="footer-info-container">
-          <img className="footer-logo" src={logoFooter} alt="Logo" />
+          <Link to="/">
+            <img className="footer-logo" src={logoFooter} alt="Logo" />
+          </Link>
           <ul className="footer-info-list">
             <li>
               <img src={locationIcon} alt="" />

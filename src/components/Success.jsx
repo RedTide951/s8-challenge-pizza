@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
 import "./Success.css";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Success() {
   const location = useLocation();
@@ -30,21 +31,23 @@ function Success() {
 
   return (
     <>
-      <div className="success-page">
-        <div className="success-page-logo-container">
-          <img
-            src={logo}
-            alt="Logo"
-            className="logo"
-            style={{ height: "2.5rem" }}
-          />
-        </div>
-        <div className="success-order-confirmed-container">
+      <main className="success-page">
+        <section className="success-page-logo-container">
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Logo"
+              className="logo"
+              style={{ height: "2.5rem" }}
+            />
+          </Link>
+        </section>
+        <section className="success-order-confirmed-container">
           <p className="success-styled-text">lezzetin yolda</p>
           <p className="success-confirmation-text">SİPARİŞ ALINDI</p>
           <hr className="success-hr" />
-        </div>
-        <div className="success-order-details-container">
+        </section>
+        <section className="success-order-details-container">
           <h3 className="success-pizza-name">Position Absolute Acı Pizza</h3>
           <div className="success-order-details-display">
             <p>
@@ -62,8 +65,8 @@ function Success() {
               </span>
             </p>
           </div>
-        </div>
-        <div className="success-order-price-details">
+        </section>
+        <section className="success-order-price-details">
           <h3 className="success-order-price-details-header">
             Sipariş Toplamı
           </h3>
@@ -77,8 +80,8 @@ function Success() {
               <p>{orderDetails.totalPrice}₺</p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
       <Footer />
     </>
   );
