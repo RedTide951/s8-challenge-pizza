@@ -15,12 +15,12 @@ function IntroPage() {
   };
 
   const menuIcons = [
-    { src: "/Assets/Iteration-2-assets/icons/1.svg" },
-    { src: "/Assets/Iteration-2-assets/icons/2.svg" },
-    { src: "/Assets/Iteration-2-assets/icons/3.svg" },
-    { src: "/Assets/Iteration-2-assets/icons/4.svg" },
-    { src: "/Assets/Iteration-2-assets/icons/5.svg" },
-    { src: "/Assets/Iteration-2-assets/icons/6.svg" },
+    { src: "/src/components/icons/1.svg" },
+    { src: "/src/components/icons/2.svg" },
+    { src: "/src/components/icons/3.svg" },
+    { src: "/src/components/icons/4.svg" },
+    { src: "/src/components/icons/5.svg" },
+    { src: "/src/components/icons/6.svg" },
   ];
 
   const firstMenuLabels = [
