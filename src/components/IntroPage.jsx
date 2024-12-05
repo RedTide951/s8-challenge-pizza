@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Tabs, Tab, Box } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
 import { useHistory } from "react-router-dom";
 import "./IntroPage.css";
@@ -75,8 +75,33 @@ function IntroPage() {
             </Button>
           </div>
           <div className="intro-page-cta-right-column">
-            <div className="cta-righ-card-1">asdasdas</div>
-            <div className="cta-righ-card-2"></div>
+            <div className="cta-right-card-1">
+              <h2 className="cta-right-card-1-heading">
+                Hackatlon <br /> Burger Menu
+              </h2>
+              <Button
+                variant="contained"
+                color="secondary"
+                className="cta-right-button1"
+                onClick={handleClick}
+              >
+                <span>Sipariş Ver</span>
+              </Button>
+            </div>
+            <div className="cta-right-card-2">
+              <h2 className="cta-right-card-2-heading">
+                <span style={{ color: "#ce2829" }}>Çooook </span> hızlı <br />{" "}
+                Npm gibi kurye
+              </h2>
+              <Button
+                variant="contained"
+                color="secondary"
+                className="cta-right-button2"
+                onClick={handleClick}
+              >
+                <span>Sipariş Ver</span>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

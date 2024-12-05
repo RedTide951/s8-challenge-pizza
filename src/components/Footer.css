@@ -52,8 +52,12 @@
 
 .footer-menu-list p,
 .footer-menu-list a {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
   text-decoration: none;
+}
+
+.footer-menu-list a:visited {
+  color: var(--color-bej);
 }
 
 .copyright-section {

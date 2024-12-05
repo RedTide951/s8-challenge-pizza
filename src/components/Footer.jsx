@@ -10,8 +10,7 @@ import li2 from "../../Assets/Iteration-2-assets/footer/insta/li-2.png";
 import li3 from "../../Assets/Iteration-2-assets/footer/insta/li-3.png";
 import li4 from "../../Assets/Iteration-2-assets/footer/insta/li-4.png";
 import li5 from "../../Assets/Iteration-2-assets/footer/insta/li-5.png";
-import { ImageList, ImageListItem } from '@mui/material';
-
+import { ImageList, ImageListItem } from "@mui/material";
 
 function Footer() {
   return (
@@ -42,13 +41,16 @@ function Footer() {
               <a href="">Terminal Pizza</a>
             </li>
             <li>
-              <a href="">Terminal Pizza</a>
+              <a href="">5 Kişilik Pizza</a>
             </li>
             <li>
-              <a href="">Terminal Pizza</a>
+              <a href="">useEffect Pizza</a>
             </li>
             <li>
-              <a href="">Terminal Pizza</a>
+              <a href="">Ultimate Hacker Burger</a>
+            </li>
+            <li>
+              <a href="">JSX Patates Kızartması</a>
             </li>
           </ul>
         </div>
@@ -57,40 +59,22 @@ function Footer() {
           <h3 className="footer-heading">Instagram</h3>
           <ImageList cols={3}>
             <ImageListItem key={1}>
-              <img
-                src={li0}
-                loading="lazy"
-              />
+              <img src={li0} loading="lazy" />
             </ImageListItem>
             <ImageListItem key={2}>
-              <img
-                src={li1}
-                loading="lazy"
-              />
+              <img src={li1} loading="lazy" />
             </ImageListItem>
             <ImageListItem key={3}>
-              <img
-                src={li2}
-                loading="lazy"
-              />
+              <img src={li2} loading="lazy" />
             </ImageListItem>
             <ImageListItem key={4}>
-              <img
-                src={li3}
-                loading="lazy"
-              />
+              <img src={li3} loading="lazy" />
             </ImageListItem>
             <ImageListItem key={5}>
-              <img
-                src={li4}
-                loading="lazy"
-              />
+              <img src={li4} loading="lazy" />
             </ImageListItem>
             <ImageListItem key={6}>
-              <img
-                src={li5}
-                loading="lazy"
-              />
+              <img src={li5} loading="lazy" />
             </ImageListItem>
           </ImageList>
         </div>
@@ -99,8 +83,7 @@ function Footer() {
         <div className="copyright-text">
           <p>2024 Teknolojik Yemekler</p>
         </div>
-        <div className="social-icons">
-        </div>
+        <div className="social-icons"></div>
       </div>
     </>
   );

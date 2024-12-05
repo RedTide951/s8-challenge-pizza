@@ -17,6 +17,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import axios from "axios";
 import DynamicPriceDisplay from "./DynamicPriceDisplay";
+import "./OrderForm.css";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "pepperoni" },
@@ -34,7 +35,6 @@ const INGREDIENTS_LIST = [
   { label: "Kabak", value: "zucchini" },
 ];
 
-
 const OrderForm = () => {
   const history = useHistory();
 
@@ -42,8 +42,10 @@ const OrderForm = () => {
     <div>
       <div className="orderform-navlinks-container">
         <div className="orderform-navlinks-wrapper">
-          <a href="">Ana Sayfa -</a>
-          <a href="">Seçenekler -</a>
+          <a href="">Ana Sayfa</a>
+          <span>-</span>
+          <a href="">Seçenekler</a>
+          <span>-</span>
           <p href="">Sipariş Oluştur</p>
         </div>
       </div>
@@ -180,16 +182,16 @@ const OrderForm = () => {
                           alignItems="left"
                         >
                           <FormControlLabel
-                            control={<Checkbox
-                              sx={{
-                                color: "gray",
-                                '&.Mui-checked': {
-                                  color: "#fdc913",
-                                },
-                                '& .MuiSvgIcon-root': { fontSize: 40 }
-
-                              }}
-                            /* icon={<span style={{
+                            control={
+                              <Checkbox
+                                sx={{
+                                  color: "gray",
+                                  "&.Mui-checked": {
+                                    color: "#fdc913",
+                                  },
+                                  "& .MuiSvgIcon-root": { fontSize: 40 },
+                                }}
+                                /* icon={<span style={{
                               borderRadius: 3,
                               width: 40,
                               height: 40,
@@ -205,7 +207,8 @@ const OrderForm = () => {
                               },
                             }}
                             />} */
-                            />}
+                              />
+                            }
                             label={label}
                             value={value}
                             onChange={handleChange}

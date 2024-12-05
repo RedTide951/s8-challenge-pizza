@@ -1,7 +1,7 @@
 .intro-page-banner-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 90vh; /* Full screen height */
   background-image: url("../../Assets/Iteration-1-assets/home-banner.png"); /* Adjust the path */
   background-size: cover; /* Ensures the image covers the container */
   background-position: center; /* Centers the image */
@@ -118,7 +118,7 @@
   gap: 2rem;
 }
 
-.cta-righ-card-1 {
+.cta-right-card-1 {
   background-image: url("../../Assets/Iteration-2-assets/cta/kart-2.png");
   background-position: center;
   background-size: cover;
@@ -126,9 +126,32 @@
   border-radius: 20px;
   min-width: 30vw;
   aspect-ratio: 2/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
 }
 
-.cta-righ-card-2 {
+.cta-right-card-1-heading {
+  color: white;
+  padding: 0 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 2rem;
+  padding: 0;
+}
+
+.cta-right-button1 {
+  color: var(--color-kirmizi);
+  background-color: white;
+  margin: 0 0 0 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  max-width: max-content;
+}
+
+.cta-right-card-2 {
   background-image: url("../../Assets/Iteration-2-assets/cta/kart-3.png");
   background-position: center;
   background-size: cover;
@@ -136,6 +159,29 @@
   border-radius: 20px;
   min-width: 30vw;
   aspect-ratio: 2/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+}
+
+.cta-right-card-2-heading {
+  color: var(--color-koyu-gri);
+  padding: 0 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 2rem;
+  padding: 0;
+}
+
+.cta-right-button2 {
+  color: var(--color-kirmizi);
+  background-color: white;
+  margin: 0 0 0 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  max-width: max-content;
 }
 
 @media (max-width: 900px) {
@@ -146,6 +192,25 @@
   .intro-page-hero-heading {
     font-size: 3rem;
   }
+
+  .intro-page-cta-wrapper {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .intro-page-cta-left-column {
+    aspect-ratio: none;
+    min-width: 40vw;
+  }
+
+  .cta-right-card-1 {
+    aspect-ratio: none;
+    min-width: 40vw;
+  }
+  .cta-right-card-2 {
+    aspect-ratio: none;
+    min-width: 40vw;
+  }
 }
 
 @media (max-width: 600px) {
@@ -155,5 +220,24 @@
 
   .intro-page-hero-heading {
     font-size: 2.5rem;
+  }
+
+  .cta-left-heading {
+    font-size: 2rem;
+  }
+
+  .cta-right-card-1 {
+    padding: 0.5rem;
+  }
+  .cta-right-card-1-heading {
+    font-size: 1rem;
+  }
+
+  .cta-right-card-2 {
+    padding: 0.5rem;
+  }
+
+  .cta-right-card-2-heading {
+    font-size: 1rem;
   }
 }
