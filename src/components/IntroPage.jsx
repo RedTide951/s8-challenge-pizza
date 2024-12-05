@@ -15,12 +15,12 @@ function IntroPage() {
   };
 
   const menuIcons = [
-    { src: "../../Assets/Iteration-2-assets/icons/1.svg" },
-    { src: "../../Assets/Iteration-2-assets/icons/2.svg" },
-    { src: "../../Assets/Iteration-2-assets/icons/3.svg" },
-    { src: "../../Assets/Iteration-2-assets/icons/4.svg" },
-    { src: "../../Assets/Iteration-2-assets/icons/5.svg" },
-    { src: "../../Assets/Iteration-2-assets/icons/6.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/1.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/2.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/3.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/4.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/5.svg" },
+    { src: "/Assets/Iteration-2-assets/icons/6.svg" },
   ];
 
   const firstMenuLabels = [
@@ -39,6 +39,33 @@ function IntroPage() {
     { text: "French Fries", alt: "French Fries" },
     { text: "Fast Food", alt: "Fast Food" },
     { text: "Soft Drinks", alt: "Soft Drinks" },
+  ];
+
+  const menuItems = [
+    {
+      id: 1,
+      image: "../../Assets/Iteration-2-assets/pictures/food-1.png",
+      name: "Terminal Pizza",
+      rating: 4.9,
+      ratingCount: 200,
+      price: "85.50₺",
+    },
+    {
+      id: 2,
+      image: "../../Assets/Iteration-2-assets/pictures/food-2.png",
+      name: "Terminal Pizza",
+      rating: 4.9,
+      ratingCount: 200,
+      price: "85.50₺",
+    },
+    {
+      id: 3,
+      image: "../../Assets/Iteration-2-assets/pictures/food-3.png",
+      name: "Terminal Pizza",
+      rating: 4.9,
+      ratingCount: 200,
+      price: "85.50₺",
+    },
   ];
 
   return (
@@ -132,7 +159,7 @@ function IntroPage() {
             labels={secondMenuLabels}
             classProp={"intro-page-img-menu-bar"}
           />
-          <MenuCards />
+          <MenuCards items={menuItems} />
         </div>
       </section>
       <Footer />
