@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Button } from "@mui/material";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
 import { useHistory } from "react-router-dom";
+import Footer from "./Footer";
 import "./IntroPage.css";
 
 function IntroPage() {
@@ -105,7 +106,94 @@ function IntroPage() {
             </div>
           </div>
         </div>
+        <div className="intro-page-img-menu-wrapper">
+          <div className="intro-page-img-menu-heading-container">
+            <p className="intro-page-img-menu-styled-heading">
+              en çok paketlenen menüler
+            </p>
+            <h3 className="intro-page-img-menu-heading">
+              Acıktıran Kodlara Doyuran Lezzetler
+            </h3>
+          </div>
+          <div className="intro-page-img-menu-bar">
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/1.svg" alt="" />
+              <span>Ramen</span>
+            </div>
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/2.svg" alt="" />
+              <span>Pizza</span>
+            </div>
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/3.svg" alt="" />
+              <span>Burger</span>
+            </div>
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/4.svg" alt="" />
+              <span>French Fries</span>
+            </div>
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/5.svg" alt="" />
+              <span>Fast Food</span>
+            </div>
+            <div className="intro-page-img-menu-item">
+              <img src="../../Assets/Iteration-2-assets/icons/6.svg" alt="" />
+              <span>Soft Drinks</span>
+            </div>
+          </div>
+          <div className="intro-page-img-menu-cards-container">
+            <div className="intro-page-img-menu-card1">
+              <div className="card-image-container">
+                <img
+                  src="../../Assets/Iteration-2-assets/pictures/food-1.png"
+                  alt=""
+                />
+              </div>
+              <div className="card-heading-container">
+                <h4 className="card-heading">Terminal Pizza</h4>
+              </div>
+              <div className="card-details-container">
+                <p className="card-detail-rating">4.9</p>
+                <p className="card-detail-rating-count">(200)</p>
+                <p className="card-detail-price">85.50₺</p>
+              </div>
+            </div>
+            <div className="intro-page-img-menu-card1">
+              <div className="card-image-container">
+                <img
+                  src="../../Assets/Iteration-2-assets/pictures/food-2.png"
+                  alt=""
+                />
+              </div>
+              <div className="card-heading-container">
+                <h4 className="card-heading">Terminal Pizza</h4>
+              </div>
+              <div className="card-details-container">
+                <p className="card-detail-rating">4.9</p>
+                <p className="card-detail-rating-count">(200)</p>
+                <p className="card-detail-price">85.50₺</p>
+              </div>
+            </div>
+            <div className="intro-page-img-menu-card1">
+              <div className="card-image-container">
+                <img
+                  src="../../Assets/Iteration-2-assets/pictures/food-3.png"
+                  alt=""
+                />
+              </div>
+              <div className="card-heading-container">
+                <h4 className="card-heading">Terminal Pizza</h4>
+              </div>
+              <div className="card-details-container">
+                <p className="card-detail-rating">4.9</p>
+                <p className="card-detail-rating-count">(200)</p>
+                <p className="card-detail-price">85.50₺</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <Footer />
     </>
   );
 }
