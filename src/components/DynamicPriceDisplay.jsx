@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 const BASE_PRICE = 100;
 const INGREDIENT_PRICE = 5;
 
-function DynamicPriceDisplay({ quantity, ingredients, size }) {
+function DynamicPriceDisplay({ quantity, ingredients, size, onPriceChange }) {
   const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
   const [extrasPrice, setExtrasPrice] = useState(0);
 
-  // Function to calculate the total price
   const calculatePrice = () => {
     const ingredientCost = ingredients.length * INGREDIENT_PRICE * quantity;
 
@@ -25,6 +24,10 @@ function DynamicPriceDisplay({ quantity, ingredients, size }) {
 
     setTotalPrice(totalPrice);
     setExtrasPrice(ingredientCost);
+
+    if (onPriceChange) {
+      onPriceChange(totalPrice, ingredientCost);
+    }
   };
 
   useEffect(() => {

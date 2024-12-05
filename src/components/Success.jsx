@@ -8,7 +8,26 @@ function Success() {
   const location = useLocation();
   const { orderDetails } = location.state || {};
 
-  console.log(orderDetails);
+  // apidata to Turkish
+
+  let size;
+
+  if (orderDetails.size === "small") {
+    size = "Küçük";
+  } else if (orderDetails.size === "medium") {
+    size = "Orta";
+  } else if (orderDetails.size === "large") {
+    size = "Büyük";
+  }
+
+  let crust;
+
+  if (orderDetails.crust === "thin") {
+    crust = "İnce";
+  } else {
+    crust = "Kalın";
+  }
+
   return (
     <>
       <div className="success-page">
@@ -26,20 +45,20 @@ function Success() {
           <hr className="success-hr" />
         </div>
         <div className="success-order-details-container">
-          <h3 className="success-pizza-name">Pizza Name</h3>
+          <h3 className="success-pizza-name">Position Absolute Acı Pizza</h3>
           <div className="success-order-details-display">
             <p>
-              Boyut:{" "}
-              <span style={{ fontWeight: "bold" }}>{orderDetails.size}</span>
+              Boyut: <span style={{ fontWeight: "bold" }}>{size}</span>
             </p>
             <p>
-              Hamur:{" "}
-              <span style={{ fontWeight: "bold" }}>{orderDetails.crust}</span>
+              Hamur: <span style={{ fontWeight: "bold" }}>{crust}</span>
             </p>
             <p>
               Ek Malzemeler:{" "}
               <span style={{ fontWeight: "bold" }}>
-                {orderDetails.ingredients}
+                {orderDetails.ingredients.length > 0
+                  ? orderDetails.ingredients.join(", ")
+                  : "Yok"}
               </span>
             </p>
           </div>
@@ -51,11 +70,11 @@ function Success() {
           <div className="success-order-price-details-display">
             <div className="secimler">
               <p>Seçimler</p>
-              <p>price{}</p>
+              <p>{orderDetails.extrasPrice}₺</p>
             </div>
             <div className="toplam">
               <p>Toplam</p>
-              <p>price{}</p>
+              <p>{orderDetails.totalPrice}₺</p>
             </div>
           </div>
         </div>

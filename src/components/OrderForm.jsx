@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import {
@@ -20,23 +20,32 @@ import DynamicPriceDisplay from "./DynamicPriceDisplay";
 import "./OrderForm.css";
 
 const INGREDIENTS_LIST = [
-  { label: "Pepperoni", value: "pepperoni" },
-  { label: "Sosis", value: "sausage" },
-  { label: "Kanada Jambonu", value: "canadian-bacon" },
-  { label: "Tavuk Izgara", value: "grilled-chicken" },
-  { label: "Soğan", value: "onion" },
-  { label: "Domates", value: "tomato" },
-  { label: "Mısır", value: "corn" },
-  { label: "Sucuk", value: "spicy-sausage" },
-  { label: "Jalepeno", value: "jalapeno" },
-  { label: "Sarımsak", value: "garlic" },
-  { label: "Biber", value: "pepper" },
-  { label: "Ananas", value: "pineapple" },
-  { label: "Kabak", value: "zucchini" },
+  { label: "Pepperoni", value: "Pepperoni" },
+  { label: "Sosis", value: "Sosis" },
+  { label: "Kanada Jambonu", value: "Kanada Jambonu" },
+  { label: "Tavuk Izgara", value: "Tavuk Izgara" },
+  { label: "Soğan", value: "Soğan" },
+  { label: "Domates", value: "Domates" },
+  { label: "Mısır", value: "Mısır" },
+  { label: "Sucuk", value: "Sucuk" },
+  { label: "Jalepeno", value: "Jalepeno" },
+  { label: "Sarımsak", value: "Sarımsak" },
+  { label: "Biber", value: "Biber" },
+  { label: "Ananas", value: "Ananas" },
+  { label: "Kabak", value: "Kabak" },
 ];
 
 const OrderForm = () => {
   const history = useHistory();
+
+  const [priceDetails, setPriceDetails] = useState({
+    totalPrice: 0,
+    extrasPrice: 0,
+  });
+
+  const handlePriceChange = (totalPrice, extrasPrice) => {
+    setPriceDetails({ totalPrice, extrasPrice });
+  };
 
   return (
     <div>
@@ -89,15 +98,21 @@ const OrderForm = () => {
         }}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           try {
-            // Simulate API call with Axios
+            const orderDetails = {
+              ...values,
+              totalPrice: priceDetails.totalPrice, // Include total price
+              extrasPrice: priceDetails.extrasPrice, // Include extras price
+            };
+
             const response = await axios.post(
               "https://reqres.in/api/pizza",
               values
             );
+
             // Log response
-            console.log("Sipariş Özeti:", response.data);
-            alert("Siparişiniz başarıyla alındı!");
-            history.push("/success", { orderDetails: response.data });
+            console.log("API Response Data:", response.data);
+            console.log("Data with Price Calculated on frontend", orderDetails);
+            history.push("/success", { orderDetails });
             resetForm();
           } catch (error) {
             console.error("Sipariş gönderilirken bir hata oluştu:", error);
@@ -298,6 +313,7 @@ const OrderForm = () => {
                         quantity={values.quantity}
                         ingredients={values.ingredients}
                         size={values.size}
+                        onPriceChange={handlePriceChange}
                       />
                     </div>
 
