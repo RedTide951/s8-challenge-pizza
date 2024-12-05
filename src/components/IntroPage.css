@@ -1,0 +1,159 @@
+.intro-page-banner-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background-image: url("../../Assets/Iteration-1-assets/home-banner.png"); /* Adjust the path */
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Avoids tiling the image */
+}
+
+.intro-page-hero-styled-text {
+  font-family: satisfy;
+  color: var(--color-sari);
+  font-size: 2rem;
+  font-weight: 200;
+  margin: 2rem 0 -1rem 0;
+}
+
+.intro-page-hero-heading {
+  color: var(--color-bej);
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: -0.1rem;
+}
+
+.intro-page-hero-button {
+  border-radius: 100px;
+  margin: 3rem;
+  padding: 0.7rem 3.5rem;
+}
+
+.intro-page-content-wrapper {
+  background: #faf7f2;
+}
+
+.intro-page-menu-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-top: 2px solid #d9d7d7;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.intro-page-menu-item {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.intro-page-menu-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.intro-page-menu-item img {
+  margin: 5px;
+}
+
+.intro-page-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5rem;
+  gap: 2rem;
+}
+
+.intro-page-cta-left-column {
+  background-image: url("../../Assets/Iteration-2-assets/cta/kart-1.png"); /* Adjust the path */
+  background-position: center; /* Centers the image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  min-width: 30vw;
+  aspect-ratio: 1/1;
+  text-align: left;
+}
+
+.cta-left-heading {
+  font-family: Quattrocento;
+  color: white;
+  font-size: 4rem;
+  font-weight: 200;
+  margin: 0;
+  padding: 3rem 2rem 0 2rem;
+  text-align: left;
+}
+
+.cta-left-subtitle {
+  color: white;
+  text-align: left;
+  padding: 0 2rem;
+  font-weight: 600;
+}
+
+.cta-left-button {
+  color: var(--color-kirmizi);
+  background-color: white;
+  text-align: left;
+  margin: 0 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.intro-page-cta-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cta-righ-card-1 {
+  background-image: url("../../Assets/Iteration-2-assets/cta/kart-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  min-width: 30vw;
+  aspect-ratio: 2/1;
+}
+
+.cta-righ-card-2 {
+  background-image: url("../../Assets/Iteration-2-assets/cta/kart-3.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  min-width: 30vw;
+  aspect-ratio: 2/1;
+}
+
+@media (max-width: 900px) {
+  .app-bar-logo {
+    height: 3rem;
+  }
+
+  .intro-page-hero-heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-bar-logo {
+    height: 2rem;
+  }
+
+  .intro-page-hero-heading {
+    font-size: 2.5rem;
+  }
+}
