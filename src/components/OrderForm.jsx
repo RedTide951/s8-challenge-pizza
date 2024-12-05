@@ -17,6 +17,7 @@ import axios from "axios";
 import DynamicPriceDisplay from "./DynamicPriceDisplay";
 import "./OrderForm.css";
 import CustomRadioGroup from "./CustomRadioGroup";
+import StyledDropdown from "./StyledDropdown";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "Pepperoni" },
@@ -152,20 +153,15 @@ const OrderForm = () => {
                     onChange={setFieldValue}
                   />
                 </FormControl>
-
                 <FormControl sx={{ minWidth: "30%" }}>
                   <h3 className="form-heading">
                     Hamur Seç <span style={{ color: "#ce2829" }}> *</span>
                   </h3>
-                  <Select
-                    labelId="crust-select-label"
+                  <StyledDropdown
                     name="crust"
                     onChange={handleChange}
                     value={values.crust}
-                  >
-                    <MenuItem value="thin">İnce</MenuItem>
-                    <MenuItem value="normal">Normal</MenuItem>
-                  </Select>
+                  />
                 </FormControl>
               </div>
               <div className="ingredients-checkbox-container">

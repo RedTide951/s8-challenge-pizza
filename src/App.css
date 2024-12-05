@@ -63,23 +63,6 @@ body {
   margin: 1rem 0;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.size-and-crust-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-  margin: 1rem 0;
-}
-
-.form-heading {
-  font-weight: 600;
-  grid-column: span 3;
-}
-
 .purchase-section-container {
   display: flex;
   justify-content: space-between;
