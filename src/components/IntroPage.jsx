@@ -25,6 +25,7 @@ function IntroPage() {
               variant="contained"
               color="secondary"
               className="intro-page-hero-button"
+              id="intro-page-hero-button"
               onClick={handleClick}
             >
               <Typography variant="h6">Acıktım</Typography>
@@ -68,7 +69,7 @@ function IntroPage() {
             <Button
               variant="contained"
               color="secondary"
-              className="cta-left-button"
+              id="cta-left-button"
               onClick={handleClick}
             >
               <span>Sipariş Ver</span>
@@ -82,7 +83,7 @@ function IntroPage() {
               <Button
                 variant="contained"
                 color="secondary"
-                className="cta-right-button1"
+                id="cta-right-button1"
                 onClick={handleClick}
               >
                 <span>Sipariş Ver</span>
@@ -96,7 +97,7 @@ function IntroPage() {
               <Button
                 variant="contained"
                 color="secondary"
-                className="cta-right-button2"
+                id="cta-right-button2"
                 onClick={handleClick}
               >
                 <span>Sipariş Ver</span>

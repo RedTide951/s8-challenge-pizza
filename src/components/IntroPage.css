@@ -24,7 +24,7 @@
   letter-spacing: -0.1rem;
 }
 
-.intro-page-hero-button {
+#intro-page-hero-button {
   border-radius: 100px;
   margin: 3rem;
   padding: 0.7rem 3.5rem;
@@ -102,7 +102,7 @@
   font-weight: 600;
 }
 
-.cta-left-button {
+#cta-left-button {
   color: var(--color-kirmizi);
   background-color: white;
   text-align: left;
@@ -141,7 +141,7 @@
   padding: 0;
 }
 
-.cta-right-button1 {
+#cta-right-button1 {
   color: var(--color-kirmizi);
   background-color: white;
   margin: 0 0 0 2rem;
@@ -174,7 +174,7 @@
   padding: 0;
 }
 
-.cta-right-button2 {
+#cta-right-button2 {
   color: var(--color-kirmizi);
   background-color: white;
   margin: 0 0 0 2rem;
