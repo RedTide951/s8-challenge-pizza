@@ -15,7 +15,7 @@ import DynamicPriceDisplay from "./DynamicPriceDisplay";
 import "./OrderForm.css";
 import CustomRadioGroup from "./CustomRadioGroup";
 import StyledDropdown from "./StyledDropdown";
-import pizzaImage from "../../Assets/Iteration-2-assets/pictures/form-banner.png";
+import pizzaImage from "/pictures/form-banner.png";
 import QuantitySelector from "./QuantitySelector";
 
 const INGREDIENTS_LIST = [

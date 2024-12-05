@@ -15,12 +15,12 @@ function IntroPage() {
   };
 
   const menuIcons = [
-    { src: "/src/components/icons/1.svg" },
-    { src: "/src/components/icons/2.svg" },
-    { src: "/src/components/icons/3.svg" },
-    { src: "/src/components/icons/4.svg" },
-    { src: "/src/components/icons/5.svg" },
-    { src: "/src/components/icons/6.svg" },
+    { src: "/icons/1.svg" },
+    { src: "/icons/2.svg" },
+    { src: "/icons/3.svg" },
+    { src: "/icons/4.svg" },
+    { src: "/icons/5.svg" },
+    { src: "/icons/6.svg" },
   ];
 
   const firstMenuLabels = [
@@ -44,7 +44,7 @@ function IntroPage() {
   const menuItems = [
     {
       id: 1,
-      image: "../../Assets/Iteration-2-assets/pictures/food-1.png",
+      image: "/pictures/food-1.png",
       name: "Terminal Pizza",
       rating: 4.9,
       ratingCount: 200,
@@ -52,7 +52,7 @@ function IntroPage() {
     },
     {
       id: 2,
-      image: "../../Assets/Iteration-2-assets/pictures/food-2.png",
+      image: "/pictures/food-2.png",
       name: "Terminal Pizza",
       rating: 4.9,
       ratingCount: 200,
@@ -60,7 +60,7 @@ function IntroPage() {
     },
     {
       id: 3,
-      image: "../../Assets/Iteration-2-assets/pictures/food-3.png",
+      image: "/pictures/food-3.png",
       name: "Terminal Pizza",
       rating: 4.9,
       ratingCount: 200,
