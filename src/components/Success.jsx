@@ -31,7 +31,7 @@ function Success() {
   return (
     <>
       <div className="success-page">
-        <div>
+        <div className="success-page-logo-container">
           <img
             src={logo}
             alt="Logo"

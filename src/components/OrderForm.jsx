@@ -6,8 +6,6 @@ import {
   Button,
   FormGroup,
   Checkbox,
-  Radio,
-  RadioGroup,
   FormControlLabel,
   FormControl,
   Select,
@@ -18,6 +16,7 @@ import Grid from "@mui/material/Grid2";
 import axios from "axios";
 import DynamicPriceDisplay from "./DynamicPriceDisplay";
 import "./OrderForm.css";
+import CustomRadioGroup from "./CustomRadioGroup";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "Pepperoni" },
@@ -37,6 +36,12 @@ const INGREDIENTS_LIST = [
 
 const OrderForm = () => {
   const history = useHistory();
+
+  const sizeOptions = [
+    { label: "S", value: "small" },
+    { label: "M", value: "medium" },
+    { label: "L", value: "large" },
+  ];
 
   const [priceDetails, setPriceDetails] = useState({
     totalPrice: 0,
@@ -131,6 +136,7 @@ const OrderForm = () => {
           errors,
           touched,
           isSubmitting,
+          setFieldValue,
         }) => (
           <>
             <form onSubmit={handleSubmit} className="form">
@@ -139,28 +145,12 @@ const OrderForm = () => {
                   <h3 className="form-heading">
                     Boyut Seç <span style={{ color: "#ce2829" }}> *</span>
                   </h3>
-                  <RadioGroup
-                    aria-labelledby="size-radio-buttons-group-label"
+                  <CustomRadioGroup
                     name="size"
-                    onChange={handleChange}
+                    options={sizeOptions}
                     value={values.size}
-                  >
-                    <FormControlLabel
-                      value="small"
-                      control={<Radio />}
-                      label="Küçük"
-                    />
-                    <FormControlLabel
-                      value="medium"
-                      control={<Radio />}
-                      label="Orta"
-                    />
-                    <FormControlLabel
-                      value="large"
-                      control={<Radio />}
-                      label="Büyük"
-                    />
-                  </RadioGroup>
+                    onChange={setFieldValue}
+                  />
                 </FormControl>
 
                 <FormControl sx={{ minWidth: "30%" }}>
