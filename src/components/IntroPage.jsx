@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Footer from "./Footer";
 import "./IntroPage.css";
 import MenuCards from "./MenuCards";
+import MenuBar from "./MenuBar";
 
 function IntroPage() {
   const history = useHistory();
@@ -13,11 +14,38 @@ function IntroPage() {
     history.push("/siparis-formu");
   };
 
+  const menuIcons = [
+    { src: "../../Assets/Iteration-2-assets/icons/1.svg" },
+    { src: "../../Assets/Iteration-2-assets/icons/2.svg" },
+    { src: "../../Assets/Iteration-2-assets/icons/3.svg" },
+    { src: "../../Assets/Iteration-2-assets/icons/4.svg" },
+    { src: "../../Assets/Iteration-2-assets/icons/5.svg" },
+    { src: "../../Assets/Iteration-2-assets/icons/6.svg" },
+  ];
+
+  const firstMenuLabels = [
+    { text: "YENİ! Kore", alt: "Kore Cuisine" },
+    { text: "Pizza", alt: "Pizza" },
+    { text: "Burger", alt: "Burger" },
+    { text: "Kızartmalar", alt: "Fries" },
+    { text: "Fast Food", alt: "Fast Food" },
+    { text: "Gazlı İçecek", alt: "Soft Drinks" },
+  ];
+
+  const secondMenuLabels = [
+    { text: "Ramen", alt: "Ramen" },
+    { text: "Pizza", alt: "Pizza" },
+    { text: "Burger", alt: "Burger" },
+    { text: "French Fries", alt: "French Fries" },
+    { text: "Fast Food", alt: "Fast Food" },
+    { text: "Soft Drinks", alt: "Soft Drinks" },
+  ];
+
   return (
     <>
       <section className="intro-page-banner-container">
         <div className="intro-page-hero">
-          <img className="app-bar-logo" src={logo} alt="Logo" />
+          <img className="app-bar-logo" src={logo} alt="Pizza App Logo" />
           <div className="intro-page-hero-text-container">
             <h2 className="intro-page-hero-styled-text">fırsatı kaçırma</h2>
             <h1 className="intro-page-hero-heading">
@@ -29,7 +57,7 @@ function IntroPage() {
               className="intro-page-hero-button"
               id="intro-page-hero-button"
               onClick={handleClick}
-              aria-label="Acıktım button"
+              aria-label="Order Now"
             >
               <Typography variant="h6">Acıktım</Typography>
             </Button>
@@ -37,47 +65,11 @@ function IntroPage() {
         </div>
       </section>
       <section className="intro-page-content-wrapper">
-        <div className="intro-page-menu-bar">
-          <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/1.svg" alt="Kore" />
-            <span>YENİ! Kore</span>
-          </div>
-          <div className="intro-page-menu-item">
-            <img
-              src="../../Assets/Iteration-2-assets/icons/2.svg"
-              alt="Pizza"
-            />
-            <span>Pizza</span>
-          </div>
-          <div className="intro-page-menu-item">
-            <img
-              src="../../Assets/Iteration-2-assets/icons/3.svg"
-              alt="Burger"
-            />
-            <span>Burger</span>
-          </div>
-          <div className="intro-page-menu-item">
-            <img
-              src="../../Assets/Iteration-2-assets/icons/4.svg"
-              alt="Kızartmalar"
-            />
-            <span>Kızartmalar</span>
-          </div>
-          <div className="intro-page-menu-item">
-            <img
-              src="../../Assets/Iteration-2-assets/icons/5.svg"
-              alt="Fast Food"
-            />
-            <span>Fast Food</span>
-          </div>
-          <div className="intro-page-menu-item">
-            <img
-              src="../../Assets/Iteration-2-assets/icons/6.svg"
-              alt="Gazlı İçecek"
-            />
-            <span>Gazlı İçecek</span>
-          </div>
-        </div>
+        <MenuBar
+          icons={menuIcons}
+          labels={firstMenuLabels}
+          classProp="intro-page-menu-bar"
+        />
         <div className="intro-page-cta-wrapper">
           <div className="intro-page-cta-left-column">
             <h2 className="cta-left-heading">
@@ -89,7 +81,7 @@ function IntroPage() {
               color="secondary"
               id="cta-left-button"
               onClick={handleClick}
-              aria-label="Sipariş Ver button for Özel Lezzetus"
+              aria-label="Order Special Lezzetus"
             >
               <span>Sipariş Ver</span>
             </Button>
@@ -104,7 +96,7 @@ function IntroPage() {
                 color="secondary"
                 id="cta-right-button1"
                 onClick={handleClick}
-                aria-label="Sipariş Ver button for Hackatlon Burger Menu"
+                aria-label="Order Hackatlon Burger Menu"
               >
                 <span>Sipariş Ver</span>
               </Button>
@@ -119,7 +111,7 @@ function IntroPage() {
                 color="secondary"
                 id="cta-right-button2"
                 onClick={handleClick}
-                aria-label="Sipariş Ver button for Çooook hızlı Npm gibi kurye"
+                aria-label="Order Fast Delivery"
               >
                 <span>Sipariş Ver</span>
               </Button>
@@ -135,50 +127,11 @@ function IntroPage() {
               Acıktıran Kodlara Doyuran Lezzetler
             </h3>
           </div>
-          <div className="intro-page-img-menu-bar">
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/1.svg"
-                alt="Ramen"
-              />
-              <span>Ramen</span>
-            </div>
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/2.svg"
-                alt="Pizza"
-              />
-              <span>Pizza</span>
-            </div>
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/3.svg"
-                alt="Burger"
-              />
-              <span>Burger</span>
-            </div>
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/4.svg"
-                alt="French Fries"
-              />
-              <span>French Fries</span>
-            </div>
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/5.svg"
-                alt="Fast Food"
-              />
-              <span>Fast Food</span>
-            </div>
-            <div className="intro-page-img-menu-item">
-              <img
-                src="../../Assets/Iteration-2-assets/icons/6.svg"
-                alt="Soft Drinks"
-              />
-              <span>Soft Drinks</span>
-            </div>
-          </div>
+          <MenuBar
+            icons={menuIcons}
+            labels={secondMenuLabels}
+            classProp={"intro-page-img-menu-bar"}
+          />
           <MenuCards />
         </div>
       </section>

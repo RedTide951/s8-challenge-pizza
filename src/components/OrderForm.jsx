@@ -53,7 +53,7 @@ const OrderForm = () => {
   };
 
   return (
-    <div>
+    <>
       <section className="orderform-upper-section-wrapper">
         <img className="orderform-item-image" src={pizzaImage} alt="Pizza" />
         <div className="orderform-navlinks-container">
@@ -107,17 +107,16 @@ const OrderForm = () => {
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           try {
             const orderDetails = {
+              // Success sayfası fiyat simülasyonu için
               ...values,
-              totalPrice: priceDetails.totalPrice, // Include total price
-              extrasPrice: priceDetails.extrasPrice, // Include extras price
+              totalPrice: priceDetails.totalPrice,
+              extrasPrice: priceDetails.extrasPrice,
             };
 
             const response = await axios.post(
               "https://reqres.in/api/pizza",
               values
             );
-
-            // Log response
             console.log("API Response Data:", response.data);
             console.log("Data with Price Calculated on frontend", orderDetails);
             history.push("/success", { orderDetails });
@@ -125,7 +124,7 @@ const OrderForm = () => {
           } catch (error) {
             console.error("Sipariş gönderilirken bir hata oluştu:", error);
             alert(
-              "Sipariş gönderilirken bir hata oluştu. Lütfen tekrar deneyiniz."
+              "Sipariş gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
             );
           } finally {
             setSubmitting(false);
@@ -298,7 +297,7 @@ const OrderForm = () => {
           </>
         )}
       </Formik>
-    </div>
+    </>
   );
 };
 
