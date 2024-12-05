@@ -15,7 +15,7 @@ function IntroPage() {
 
   return (
     <>
-      <div className="intro-page-banner-container">
+      <section className="intro-page-banner-container">
         <div className="intro-page-hero">
           <img className="app-bar-logo" src={logo} alt="Logo" />
           <div className="intro-page-hero-text-container">
@@ -29,36 +29,52 @@ function IntroPage() {
               className="intro-page-hero-button"
               id="intro-page-hero-button"
               onClick={handleClick}
+              aria-label="Acıktım button"
             >
               <Typography variant="h6">Acıktım</Typography>
             </Button>
           </div>
         </div>
-      </div>
-      <div className="intro-page-content-wrapper">
+      </section>
+      <section className="intro-page-content-wrapper">
         <div className="intro-page-menu-bar">
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/1.svg" alt="" />
+            <img src="../../Assets/Iteration-2-assets/icons/1.svg" alt="Kore" />
             <span>YENİ! Kore</span>
           </div>
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/2.svg" alt="" />
+            <img
+              src="../../Assets/Iteration-2-assets/icons/2.svg"
+              alt="Pizza"
+            />
             <span>Pizza</span>
           </div>
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/3.svg" alt="" />
+            <img
+              src="../../Assets/Iteration-2-assets/icons/3.svg"
+              alt="Burger"
+            />
             <span>Burger</span>
           </div>
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/4.svg" alt="" />
+            <img
+              src="../../Assets/Iteration-2-assets/icons/4.svg"
+              alt="Kızartmalar"
+            />
             <span>Kızartmalar</span>
           </div>
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/5.svg" alt="" />
+            <img
+              src="../../Assets/Iteration-2-assets/icons/5.svg"
+              alt="Fast Food"
+            />
             <span>Fast Food</span>
           </div>
           <div className="intro-page-menu-item">
-            <img src="../../Assets/Iteration-2-assets/icons/6.svg" alt="" />
+            <img
+              src="../../Assets/Iteration-2-assets/icons/6.svg"
+              alt="Gazlı İçecek"
+            />
             <span>Gazlı İçecek</span>
           </div>
         </div>
@@ -73,6 +89,7 @@ function IntroPage() {
               color="secondary"
               id="cta-left-button"
               onClick={handleClick}
+              aria-label="Sipariş Ver button for Özel Lezzetus"
             >
               <span>Sipariş Ver</span>
             </Button>
@@ -87,6 +104,7 @@ function IntroPage() {
                 color="secondary"
                 id="cta-right-button1"
                 onClick={handleClick}
+                aria-label="Sipariş Ver button for Hackatlon Burger Menu"
               >
                 <span>Sipariş Ver</span>
               </Button>
@@ -101,6 +119,7 @@ function IntroPage() {
                 color="secondary"
                 id="cta-right-button2"
                 onClick={handleClick}
+                aria-label="Sipariş Ver button for Çooook hızlı Npm gibi kurye"
               >
                 <span>Sipariş Ver</span>
               </Button>
@@ -118,33 +137,51 @@ function IntroPage() {
           </div>
           <div className="intro-page-img-menu-bar">
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/1.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/1.svg"
+                alt="Ramen"
+              />
               <span>Ramen</span>
             </div>
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/2.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/2.svg"
+                alt="Pizza"
+              />
               <span>Pizza</span>
             </div>
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/3.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/3.svg"
+                alt="Burger"
+              />
               <span>Burger</span>
             </div>
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/4.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/4.svg"
+                alt="French Fries"
+              />
               <span>French Fries</span>
             </div>
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/5.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/5.svg"
+                alt="Fast Food"
+              />
               <span>Fast Food</span>
             </div>
             <div className="intro-page-img-menu-item">
-              <img src="../../Assets/Iteration-2-assets/icons/6.svg" alt="" />
+              <img
+                src="../../Assets/Iteration-2-assets/icons/6.svg"
+                alt="Soft Drinks"
+              />
               <span>Soft Drinks</span>
             </div>
           </div>
           <MenuCards />
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );

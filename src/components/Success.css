@@ -7,6 +7,10 @@
   padding: 2rem 0 0 0;
 }
 
+.success-page-logo-container img {
+  width: 100%;
+}
+
 .success-order-confirmed-container {
   margin: 1rem 20%;
   padding: 2rem;

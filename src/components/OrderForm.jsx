@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import {
-  ButtonGroup,
   Button,
   FormGroup,
   Checkbox,
@@ -17,6 +16,7 @@ import "./OrderForm.css";
 import CustomRadioGroup from "./CustomRadioGroup";
 import StyledDropdown from "./StyledDropdown";
 import pizzaImage from "../../Assets/Iteration-2-assets/pictures/form-banner.png";
+import QuantitySelector from "./QuantitySelector";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "Pepperoni" },
@@ -54,8 +54,8 @@ const OrderForm = () => {
 
   return (
     <div>
-      <div className="orderform-upper-section-wrapper">
-        <img className="orderform-item-image" src={pizzaImage} alt="" />
+      <section className="orderform-upper-section-wrapper">
+        <img className="orderform-item-image" src={pizzaImage} alt="Pizza" />
         <div className="orderform-navlinks-container">
           <div className="orderform-navlinks-wrapper">
             <a href="">Ana Sayfa</a>
@@ -87,7 +87,7 @@ const OrderForm = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
       <Formik
         initialValues={{
           crust: "thin",
@@ -153,6 +153,7 @@ const OrderForm = () => {
                     options={sizeOptions}
                     value={values.size}
                     onChange={setFieldValue}
+                    aria-label="Pizza size selection"
                   />
                 </FormControl>
                 <FormControl sx={{ minWidth: "30%" }}>
@@ -163,6 +164,7 @@ const OrderForm = () => {
                     name="crust"
                     onChange={handleChange}
                     value={values.crust}
+                    aria-label="Crust selection"
                   />
                 </FormControl>
               </div>
@@ -194,22 +196,6 @@ const OrderForm = () => {
                                   },
                                   "& .MuiSvgIcon-root": { fontSize: 40 },
                                 }}
-                                /* icon={<span style={{
-                              borderRadius: 3,
-                              width: 40,
-                              height: 40,
-                              boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
-                              backgroundColor: '#FAF7F2',
-                              backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
-                              '.Mui-focusVisible &': {
-                                outline: '2px auto rgba(19,124,189,.6)',
-                                outlineOffset: 2,
-                              },
-                              'input:hover ~ &': {
-                                backgroundColor: '#ebf1f5',
-                              },
-                            }}
-                            />} */
                               />
                             }
                             label={label}
@@ -248,52 +234,35 @@ const OrderForm = () => {
                       placeholder="Sipariş notunuzu buraya yazabilirsiniz."
                       value={values.note || ""}
                       onChange={handleChange}
+                      aria-label="Order note"
                     />
                   </FormGroup>
                 </div>
                 <hr />
                 <div className="purchase-section-container">
                   <div className="quantity-selector-container">
-                    <FormGroup onChange={handleChange}>
-                      <ButtonGroup disableElevation variant="contained">
-                        <Button
-                          className="quantity-button"
-                          color="secondary"
-                          size="large"
-                          sx={{ width: "50px", height: "50px" }}
-                          onClick={() => {
-                            values.quantity > 1 &&
-                              handleChange({
-                                target: {
-                                  name: "quantity",
-                                  value: values.quantity - 1,
-                                },
-                              });
-                          }}
-                        >
-                          -
-                        </Button>
-                        <div className="quantity-display">
-                          {values.quantity}
-                        </div>
-                        <Button
-                          className="quantity-button"
-                          color="secondary"
-                          sx={{ width: "50px", height: "50px" }}
-                          onClick={() => {
-                            values.quantity < 20 &&
-                              handleChange({
-                                target: {
-                                  name: "quantity",
-                                  value: values.quantity + 1,
-                                },
-                              });
-                          }}
-                        >
-                          +
-                        </Button>
-                      </ButtonGroup>
-                    </FormGroup>
+                    <h3 className="form-heading">Adet</h3>
+                    <QuantitySelector
+                      value={values.quantity}
+                      onIncrement={() =>
+                        values.quantity < 20 &&
+                        handleChange({
+                          target: {
+                            name: "quantity",
+                            value: values.quantity + 1,
+                          },
+                        })
+                      }
+                      onDecrement={() =>
+                        values.quantity > 1 &&
+                        handleChange({
+                          target: {
+                            name: "quantity",
+                            value: values.quantity - 1,
+                          },
+                        })
+                      }
+                    />
                   </div>
                   <div className="purchase-finalize-container">
                     <div className="prices-display-container">
@@ -302,6 +271,7 @@ const OrderForm = () => {
                         ingredients={values.ingredients}
                         size={values.size}
                         onPriceChange={handlePriceChange}
+                        aria-label="Price display"
                       />
                     </div>
 
@@ -310,13 +280,14 @@ const OrderForm = () => {
                       type="submit"
                       color="secondary"
                       size="large"
-                      sx={{ width: "100%", height: "100%" }}
+                      sx={{ width: "100%", height: "100%", fontSize: "1.3rem" }}
                       className="purchase-button"
                       disabled={
                         isSubmitting ||
                         Boolean(errors.username) ||
                         Boolean(errors.ingredients)
                       }
+                      aria-label="Submit order"
                     >
                       Sipariş oluştur
                     </Button>
