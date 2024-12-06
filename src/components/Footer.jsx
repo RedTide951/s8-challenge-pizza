@@ -41,19 +41,29 @@ function Footer() {
           <h3 className="footer-heading">Hot Menu</h3>
           <ul className="footer-menu-list">
             <li>
-              <a href="">Terminal Pizza</a>
+              <Link to="/">
+                <a href="">Terminal Pizza</a>
+              </Link>
             </li>
             <li>
-              <a href="">5 Kişilik Pizza</a>
+              <Link to="/">
+                <a href="">5 Kişilik Pizza</a>
+              </Link>
             </li>
             <li>
-              <a href="">useEffect Pizza</a>
+              <Link to="/">
+                <a href="">useEffect Pizza</a>
+              </Link>
             </li>
             <li>
-              <a href="">Ultimate Hacker Burger</a>
+              <Link to="/">
+                <a href="">Ultimate Hacker Burger</a>
+              </Link>
             </li>
             <li>
-              <a href="">JSX Patates Kızartması</a>
+              <Link to="/">
+                <a href="">JSX Patates Kızartması</a>
+              </Link>
             </li>
           </ul>
         </div>
