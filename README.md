@@ -7,6 +7,7 @@ This project is a fully functional Single Page Application (SPA) developed as pa
 ### **User-Friendly Interface:**  
 Built a responsive design that ensures a smooth and intuitive user experience across all devices.
 
+
 ### **Dynamic Order Form:**  
 Developed a detailed order form using **Formik** and **MUI** for:
 
@@ -29,7 +30,7 @@ Used **Cypress** to implement thorough tests for:
 **Design Precision:**  
 Followed Figma designs to create a pixel-perfect interface, focusing on accessibility and a modern user experience.
 
-### Key Technologies Used
+## Key Technologies Used
 
 - **React** for building dynamic components.
 - **Formik** for form handling and validation.
