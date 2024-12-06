@@ -1,25 +1,25 @@
-**Teknolojik Yemekler - SPA Challenge**
+# **Teknolojik Yemekler - SPA Challenge**
 
 This project is a fully functional Single Page Application (SPA) developed as part of the Workintech bootcamp. It showcases advanced concepts in React and modern web development practices, with a focus on creating an intuitive food-ordering experience.
 
-### Project Features
+## Project Features
 
-**User-Friendly Interface:**  
+### **User-Friendly Interface:**  
 Built a responsive design that ensures a smooth and intuitive user experience across all devices.
 
-**Dynamic Order Form:**  
+### **Dynamic Order Form:**  
 Developed a detailed order form using **Formik** and **MUI** for:
 
 - Real-time validation for names and ingredient selection.
 - Customizable pizza sizes using radio buttons and multi-select topping options.
 
-**Routing and State Management:**  
+### **Routing and State Management:**  
 Implemented navigation with **React Router** and managed data flow across pages using **Prop-Lifting**, avoiding the use of global state management tools.
 
-**API Integration with Axios:**  
+### **API Integration with Axios:**  
 Simulated real-world API behavior by sending POST requests to a mock server, validating form data, and dynamically returning responses.
 
-**Comprehensive Testing:**  
+### **Comprehensive Testing:**  
 Used **Cypress** to implement thorough tests for:
 
 - Input validation.
