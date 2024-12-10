@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_PRICE = 100;
 const INGREDIENT_PRICE = 5;
 
-function DynamicPriceDisplay({ quantity, ingredients, size, onPriceChange }) {
-  const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
+function DynamicPriceDisplay({
+  quantity,
+  ingredients,
+  basePrice,
+  size,
+  onPriceChange,
+}) {
+  const [totalPrice, setTotalPrice] = useState(basePrice);
   const [extrasPrice, setExtrasPrice] = useState(0);
 
   const calculatePrice = () => {
@@ -13,11 +18,11 @@ function DynamicPriceDisplay({ quantity, ingredients, size, onPriceChange }) {
     let newPizzaPrice;
 
     if (size === "small") {
-      newPizzaPrice = BASE_PRICE * 0.8;
+      newPizzaPrice = basePrice * 0.8;
     } else if (size === "medium") {
-      newPizzaPrice = BASE_PRICE * 1;
+      newPizzaPrice = basePrice * 1;
     } else if (size === "large") {
-      newPizzaPrice = BASE_PRICE * 1.5;
+      newPizzaPrice = basePrice * 1.5;
     }
 
     const totalPrice = quantity * newPizzaPrice + quantity * ingredientCost;

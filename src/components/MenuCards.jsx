@@ -6,7 +6,18 @@ const MenuCards = ({ items }) => {
     <div className="intro-page-img-menu-cards-container">
       {items.map((item) => (
         <Link
-          to={`/siparis-formu`}
+          to={{
+            pathname: "/siparis-formu",
+            state: {
+              name: item.name,
+              price: item.price,
+              rating: item.rating,
+              image: item.image,
+              id: item.id,
+              description: item.description,
+              ratingCount: item.ratingCount,
+            },
+          }}
           className="intro-page-img-menu-card1"
           key={item.id}
         >
@@ -17,9 +28,8 @@ const MenuCards = ({ items }) => {
             <h4 className="card-heading">{item.name}</h4>
           </div>
           <div className="card-details-container">
-            <p className="card-detail-rating">{item.rating}</p>
-            <p className="card-detail-rating-count">({item.ratingCount})</p>
-            <p className="card-detail-price">{item.price}</p>
+            <p className="card-detail-rating">Puan: {item.rating}</p>
+            <p className="card-detail-price">{item.price}₺</p>
           </div>
         </Link>
       ))}
