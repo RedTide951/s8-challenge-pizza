@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom/";
 import OrderPage from "./components/OrderPage.jsx";
 import IntroPage from "./components/IntroPage.jsx";
 import Success from "./components/Success.jsx";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/siparis-formu" component={OrderPage} />
         <Route path="/success" component={Success} />
       </Switch>
+      <ToastContainer />
     </div>
   );
 }

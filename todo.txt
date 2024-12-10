@@ -1,2 +1,0 @@
-- Success page'ine price bilgisi aktar
-    - Kelimeleri formatla

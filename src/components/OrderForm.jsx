@@ -17,6 +17,7 @@ import CustomRadioGroup from "./CustomRadioGroup";
 import StyledDropdown from "./StyledDropdown";
 import pizzaImage from "/pictures/form-banner.png";
 import QuantitySelector from "./QuantitySelector";
+import { toast } from "react-toastify";
 
 const INGREDIENTS_LIST = [
   { label: "Pepperoni", value: "Pepperoni" },
@@ -120,6 +121,7 @@ const OrderForm = () => {
             console.log("API Response Data:", response.data);
             console.log("Data with Price Calculated on frontend", orderDetails);
             history.push("/success", { orderDetails });
+            toast.success("Siparişin başarılı bir şekilde iletildi!");
             resetForm();
           } catch (error) {
             console.error("Sipariş gönderilirken bir hata oluştu:", error);
@@ -281,11 +283,7 @@ const OrderForm = () => {
                       size="large"
                       sx={{ width: "100%", height: "100%", fontSize: "1.3rem" }}
                       className="purchase-button"
-                      disabled={
-                        isSubmitting ||
-                        Boolean(errors.username) ||
-                        Boolean(errors.ingredients)
-                      }
+                      disabled={isSubmitting}
                       aria-label="Submit order"
                     >
                       Sipariş oluştur
