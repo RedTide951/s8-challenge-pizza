@@ -67,7 +67,6 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-spacer-container"></div>
         <div className="footer-gallery-container">
           <h3 className="footer-heading">Instagram</h3>
           <ImageList cols={3}>

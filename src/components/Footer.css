@@ -1,7 +1,7 @@
 .footer-main-container {
   background-color: var(--color-koyu-gri);
   color: var(--color-bej);
-  padding: 2rem 5%;
+  padding: 3rem 5%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
