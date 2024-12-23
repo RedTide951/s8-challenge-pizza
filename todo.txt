@@ -1,2 +1,1 @@
-- Success page'ine price bilgisi aktar
-    - Kelimeleri formatla
+calculation logic i display componentinden order componentine alınacak.

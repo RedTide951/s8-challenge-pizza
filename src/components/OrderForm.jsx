@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { Formik } from "formik";
 import {
   Button,
@@ -12,36 +12,34 @@ import {
 import Grid from "@mui/material/Grid2";
 import axios from "axios";
 import DynamicPriceDisplay from "./DynamicPriceDisplay";
+import DynamicPriceDisplaySingleLine from "./DynamicPriceDisplaySingleLine";
 import "./OrderForm.css";
 import CustomRadioGroup from "./CustomRadioGroup";
 import StyledDropdown from "./StyledDropdown";
 import pizzaImage from "/pictures/form-banner.png";
 import QuantitySelector from "./QuantitySelector";
-
-const INGREDIENTS_LIST = [
-  { label: "Pepperoni", value: "Pepperoni" },
-  { label: "Sosis", value: "Sosis" },
-  { label: "Kanada Jambonu", value: "Kanada Jambonu" },
-  { label: "Tavuk Izgara", value: "Tavuk Izgara" },
-  { label: "Soğan", value: "Soğan" },
-  { label: "Domates", value: "Domates" },
-  { label: "Mısır", value: "Mısır" },
-  { label: "Sucuk", value: "Sucuk" },
-  { label: "Jalepeno", value: "Jalepeno" },
-  { label: "Sarımsak", value: "Sarımsak" },
-  { label: "Biber", value: "Biber" },
-  { label: "Ananas", value: "Ananas" },
-  { label: "Kabak", value: "Kabak" },
-];
+import { toast } from "react-toastify";
+import { INGREDIENTS_LIST, sizeOptions } from "./MockDB";
 
 const OrderForm = () => {
   const history = useHistory();
+  const location = useLocation();
 
-  const sizeOptions = [
-    { label: "S", value: "small" },
-    { label: "M", value: "medium" },
-    { label: "L", value: "large" },
-  ];
+  const defaultItem = {
+    name: "Position Absolute Acı Pizza",
+    price: 140.5,
+    rating: 4.9,
+    ratingCount: 124,
+    image: "/pictures/food-1.png",
+    id: 1,
+    description:
+      "Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir",
+  };
+
+  const { name, price, rating, ratingCount, image, id, description } = {
+    ...defaultItem,
+    ...location.state,
+  };
 
   const [priceDetails, setPriceDetails] = useState({
     totalPrice: 0,
@@ -67,24 +65,23 @@ const OrderForm = () => {
         </div>
         <div className="description-container">
           <div className="item-heading-container">
-            <h2 className="item-name-heading">Position Absolute Acı Pizza</h2>
+            <h2 className="item-name-heading">{name}</h2>
           </div>
           <div className="numbers-container">
-            <p className="price">85.50₺</p>
+            <p className="price">{price}₺</p>
             <p></p>
-            <p className="rating">4.9</p>
-            <p className="bilinmeyen-sayi">200</p>
+            <p className="rating">
+              Puan:
+              <span style={{ fontWeight: "bold" }}> {rating}</span>
+            </p>
+
+            <p className="bilinmeyen-sayi">
+              Oylama sayısı:{" "}
+              <span style={{ fontWeight: "bold" }}>{ratingCount} </span>
+            </p>
           </div>
           <div className="item-description-text">
-            <p>
-              Frontent Dev olarak hala position:absolute kullanıyorsan bu çok
-              acı pizza tam sana göre. Pizza, domates, peynir ve genellikle
-              çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
-              odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle
-              yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan
-              İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
-              pizzetta denir
-            </p>
+            <p>{description}</p>
           </div>
         </div>
       </section>
@@ -120,6 +117,7 @@ const OrderForm = () => {
             console.log("API Response Data:", response.data);
             console.log("Data with Price Calculated on frontend", orderDetails);
             history.push("/success", { orderDetails });
+            toast.success("Siparişin başarılı bir şekilde iletildi!");
             resetForm();
           } catch (error) {
             console.error("Sipariş gönderilirken bir hata oluştu:", error);
@@ -172,7 +170,7 @@ const OrderForm = () => {
                   Ek Malzemeler
                 </h3>
                 <div className="item-description-text">
-                  <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+                  <p>Ek malzeme ücreti: 5₺</p>
                 </div>
                 <Grid container spacing={3}>
                   <FormGroup onChange={handleChange}>
@@ -269,6 +267,7 @@ const OrderForm = () => {
                         quantity={values.quantity}
                         ingredients={values.ingredients}
                         size={values.size}
+                        basePrice={price}
                         onPriceChange={handlePriceChange}
                         aria-label="Price display"
                       />
@@ -281,11 +280,7 @@ const OrderForm = () => {
                       size="large"
                       sx={{ width: "100%", height: "100%", fontSize: "1.3rem" }}
                       className="purchase-button"
-                      disabled={
-                        isSubmitting ||
-                        Boolean(errors.username) ||
-                        Boolean(errors.ingredients)
-                      }
+                      disabled={isSubmitting}
                       aria-label="Submit order"
                     >
                       Sipariş oluştur

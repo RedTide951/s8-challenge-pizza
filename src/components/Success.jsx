@@ -72,7 +72,7 @@ function Success() {
           </h3>
           <div className="success-order-price-details-display">
             <div className="secimler">
-              <p>Seçimler</p>
+              <p>Ek Malzemeler</p>
               <p>{orderDetails.extrasPrice}₺</p>
             </div>
             <div className="toplam">

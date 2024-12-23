@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import "./IntroPage.css";
 import MenuCards from "./MenuCards";
 import MenuBar from "./MenuBar";
+import { menuIcons, firstMenuLabels, secondMenuLabels, items } from "./MockDB";
 
 function IntroPage() {
   const history = useHistory();
@@ -13,60 +14,6 @@ function IntroPage() {
   const handleClick = () => {
     history.push("/siparis-formu");
   };
-
-  const menuIcons = [
-    { src: "/icons/1.svg" },
-    { src: "/icons/2.svg" },
-    { src: "/icons/3.svg" },
-    { src: "/icons/4.svg" },
-    { src: "/icons/5.svg" },
-    { src: "/icons/6.svg" },
-  ];
-
-  const firstMenuLabels = [
-    { text: "YENİ! Kore", alt: "Kore Cuisine" },
-    { text: "Pizza", alt: "Pizza" },
-    { text: "Burger", alt: "Burger" },
-    { text: "Kızartmalar", alt: "Fries" },
-    { text: "Fast Food", alt: "Fast Food" },
-    { text: "Gazlı İçecek", alt: "Soft Drinks" },
-  ];
-
-  const secondMenuLabels = [
-    { text: "Ramen", alt: "Ramen" },
-    { text: "Pizza", alt: "Pizza" },
-    { text: "Burger", alt: "Burger" },
-    { text: "French Fries", alt: "French Fries" },
-    { text: "Fast Food", alt: "Fast Food" },
-    { text: "Soft Drinks", alt: "Soft Drinks" },
-  ];
-
-  const menuItems = [
-    {
-      id: 1,
-      image: "/pictures/food-1.png",
-      name: "Terminal Pizza",
-      rating: 4.9,
-      ratingCount: 200,
-      price: "85.50₺",
-    },
-    {
-      id: 2,
-      image: "/pictures/food-2.png",
-      name: "Terminal Pizza",
-      rating: 4.9,
-      ratingCount: 200,
-      price: "85.50₺",
-    },
-    {
-      id: 3,
-      image: "/pictures/food-3.png",
-      name: "Terminal Pizza",
-      rating: 4.9,
-      ratingCount: 200,
-      price: "85.50₺",
-    },
-  ];
 
   return (
     <>
@@ -159,7 +106,7 @@ function IntroPage() {
             labels={secondMenuLabels}
             classProp={"intro-page-img-menu-bar"}
           />
-          <MenuCards items={menuItems} />
+          <MenuCards items={items} />
         </div>
       </section>
       <Footer />
